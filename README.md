@@ -4,7 +4,7 @@
 
 A **job offer comparison application** for graduating UBC CS students. Students can choose the best job offer that they’ve
 got according to locations, their own preferences and most importantly, to check whether students got low-balled offers 
-or not. I may use this application for <br>
+or not. I may use this application for choosing job offers.<br>
 <br>
 First of all, the information (e.g. office location, average salary) of some top companies <em>(e.g. MANGA)</em> is 
 stored inside the system already. At the same time, the living cost of North American big cities <em>(e.g. Vancouver, 
