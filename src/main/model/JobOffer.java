@@ -5,21 +5,21 @@ public class JobOffer {
     public static String CompanyName;
     public static String JobPosition;
     public static String JobLocation;
-    public static int AnnualSalary;
-    public static int SigningBonus;
-    public static int StockAmount;
-    public static int StockPriceCurrent;
+    public static double AnnualSalary;
+    public static double SigningBonus;
+    public static double StockAmount;
+    public static double StockPriceCurrent;
 
     public JobOffer(String CompanyName, String JobPosition, String JobLocation,
-                    int AnnualSalary, int SigningBonus, int StockAmount, int StockPriceCurrent) {
+                    double AnnualSalary, double SigningBonus, double StockAmount, double StockPriceCurrent) {
 
-        this.CompanyName = CompanyName;
-        this.JobPosition = JobPosition;
-        this.JobLocation = JobLocation;
-        this.AnnualSalary = AnnualSalary;
-        this.SigningBonus = SigningBonus;
-        this.StockAmount = StockAmount;
-        this.StockPriceCurrent = StockPriceCurrent;
+        JobOffer.CompanyName = CompanyName;
+        JobOffer.JobPosition = JobPosition;
+        JobOffer.JobLocation = JobLocation;
+        JobOffer.AnnualSalary = AnnualSalary;
+        JobOffer.SigningBonus = SigningBonus;
+        JobOffer.StockAmount = StockAmount;
+        JobOffer.StockPriceCurrent = StockPriceCurrent;
 
     }
 

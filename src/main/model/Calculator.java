@@ -5,7 +5,7 @@ import static model.CityList.cityList;
 public class Calculator {
 
     public static double CalculateTotalSalary(JobOffer jo) {
-        return jo.getAnnualSalary() + jo.getSigningBonus() + (jo.getStockAmount() * jo.getStockPriceCurrent()) ;
+        return (jo.getAnnualSalary() + jo.getSigningBonus() + (jo.getStockAmount() * jo.getStockPriceCurrent()));
     }
 
     //public static double CityLivingCostUSD(String city) {
@@ -16,18 +16,20 @@ public class Calculator {
     //    }
     //}
 
-    public static double CityLivingCost(String city) {
-        double lc = 0;
-        for (City c : cityList) {
-            if (c.getNameCity().equals(city)) {
-                lc = c.getLivingExpenses();
-            }
+    public static double CityLivingCost(City city) {
+        double LivingCost = 0;
+        if (city.getCountryName().equals("CA")) {
+            LivingCost = city.getLivingExpenses() * 0.74 ;
         }
-        return lc;
+        else if (city.getCountryName().equals("USA")) {
+            LivingCost = city.getLivingExpenses();
+        }
+        return LivingCost;
     }
 
-    public static double CalculateDisposableIncome(JobOffer jo) {
-        return (CalculateTotalSalary(jo) - CityLivingCost(jo.getJobLocation())) ;
+    public static double CalculateDisposableIncome(JobOffer jo, City city) {
+        double di = CalculateTotalSalary(jo) - CityLivingCost(city);
+        return di;
     }
 
 }

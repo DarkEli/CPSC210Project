@@ -13,4 +13,5 @@ public class CityList {
     public void removeCityToList(City city) {
         cityList.remove(city);
     }
+
 }
