@@ -6,7 +6,7 @@ public class CityList {
 
     static ArrayList<City> cityList = new ArrayList<>();
 
-    public void addCityToList(City city){
+    public void addCityToList(City city) {
         cityList.add(city);
     }
 

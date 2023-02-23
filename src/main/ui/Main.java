@@ -1,11 +1,5 @@
 package ui;
 
-import model.City;
-import model.CityList;
-import model.JobOffer;
-import model.JobOfferList;
-import model.Calculator;
-
 public class Main {
     public static void main(String[] args) {
         new JobOfferComparatorApp();

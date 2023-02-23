@@ -2,49 +2,59 @@ package model;
 
 public class JobOffer {
 
-    public static String CompanyName;
-    public static String JobPosition;
-    public static String JobLocation;
-    public static double AnnualSalary;
-    public static double SigningBonus;
-    public static double StockAmount;
-    public static double StockPriceCurrent;
+    private static String companyName;
+    private static String jobPosition;
+    private static String jobLocation;
+    private static double annualSalary;
+    private static double signingBonus;
+    private static int stockAmount;
+    private static double stockPriceCurrent;
 
-    public JobOffer(String CompanyName, String JobPosition, String JobLocation,
-                    double AnnualSalary, double SigningBonus, double StockAmount, double StockPriceCurrent) {
+    public JobOffer(String companyName, String jobPosition, String jobLocation,
+                    double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
 
-        JobOffer.CompanyName = CompanyName;
-        JobOffer.JobPosition = JobPosition;
-        JobOffer.JobLocation = JobLocation;
-        JobOffer.AnnualSalary = AnnualSalary;
-        JobOffer.SigningBonus = SigningBonus;
-        JobOffer.StockAmount = StockAmount;
-        JobOffer.StockPriceCurrent = StockPriceCurrent;
+        JobOffer.companyName = companyName;
+        JobOffer.jobPosition = jobPosition;
+        JobOffer.jobLocation = jobLocation;
+        JobOffer.annualSalary = annualSalary;
+        JobOffer.signingBonus = signingBonus;
+        JobOffer.stockAmount = stockAmount;
+        JobOffer.stockPriceCurrent = stockPriceCurrent;
 
     }
 
     public String getCompanyName() {
-        return CompanyName;
+
+        return companyName;
     }
 
-    public String getJobPosition() {return JobPosition; }
+    public String getJobPosition() {
+        return jobPosition;
+    }
 
-    public String getJobLocation() {return JobLocation; }
+    public String getJobLocation() {
+        return jobLocation;
+    }
 
     public double getAnnualSalary() {
-        return AnnualSalary;
+
+        return annualSalary;
     }
 
     public double getSigningBonus() {
-        return SigningBonus;
+        return signingBonus;
     }
 
     public double getStockAmount() {
-        return StockAmount;
+        return stockAmount;
     }
 
     public double getStockPriceCurrent() {
-        return StockPriceCurrent;
+        return stockPriceCurrent;
+    }
+
+    public static double calculateTotalSalary(JobOffer jo) {
+        return (jo.getAnnualSalary() + jo.getSigningBonus() + (jo.getStockAmount() * jo.getStockPriceCurrent()));
     }
 }
 

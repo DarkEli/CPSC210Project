@@ -2,13 +2,12 @@ package model;
 
 public class City {
 
-    public static String NameCity;
-    public static String countryName;
-    public static int livingExpensesAveragePerMonth;
+    private static String cityName;
+    private static String countryName;
+    private static double livingExpensesAveragePerMonth;
 
-    public City (String NameCity, String countryName,
-                 int livingExpensesAveragePerMonth) {
-        this.NameCity = NameCity;
+    public City(String cityName, String countryName, double livingExpensesAveragePerMonth) {
+        this.cityName = cityName;
         this.countryName = countryName;
         this.livingExpensesAveragePerMonth = livingExpensesAveragePerMonth;
     }
@@ -17,9 +16,13 @@ public class City {
         return livingExpensesAveragePerMonth;
     }
 
-    public String getNameCity() {return NameCity;}
+    public String getNameCity() {
+        return cityName;
+    }
 
-    public String getCountryName() {return countryName; }
+    public String getCountryName() {
+        return countryName;
+    }
 
 //    City Vancouver = new City("Vancouver", "Canada",
 //            4000, "CAD");

@@ -1,11 +1,10 @@
 package ui;
 
-import model.City;
-import model.CityList;
-import model.JobOffer;
-import model.JobOfferList;
+import model.*;
 
 import java.util.Scanner;
+
+import static model.JobOffer.calculateTotalSalary;
 
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
@@ -13,6 +12,16 @@ public class JobOfferComparatorApp {
     private Scanner input;
     private City city;
     private CityList cityList;
+    String companyName;
+    String jobPosition;
+    String jobLocation;
+    double annualSalary;
+    double signingBonus;
+    int stockAmount;
+    double stockPriceCurrent;
+    String cityName;
+    String countryName;
+    double livingExpenses;
 
 
     // EFFECTS: runs the teller application
@@ -48,12 +57,16 @@ public class JobOfferComparatorApp {
     private void processCommand(String command)  {
         if (command.equals("a")) {
             addJobOffer();
-        } else if (command.equals("r")) {
+        } else if (command.equals("rj")) {
             removeJobOffer();
         } else if (command.equals("f")) {
             findBestJobOffer();
+        } else if (command.equals("ts")) {
+            caltotalsalaryconsole();
         } else if (command.equals("c")) {
             addCityInfo();
+        } else if (command.equals("rc")) {
+            removeCityInfo();
         } else {
             System.out.println("Not a valid input...");
         }
@@ -72,38 +85,49 @@ public class JobOfferComparatorApp {
     private void displayMenu() {
         System.out.println("\nSelect from:");
         System.out.println("\ta -> Add Job Offer");
-        System.out.println("\tr -> Remove Job Offer");
+        System.out.println("\trj -> Remove Job Offer");
+        System.out.println("\tts -> Calculate the total annual salary of 1 Job Offer");
         System.out.println("\tf -> Find the Best Job Offer");
         System.out.println("\tc -> Add City Info");
+        System.out.println("\trc -> Remove City Info");
         System.out.println("\tq -> Quit");
     }
 
     // MODIFIES: this
-    // EFFECTS: adds Job Offer to the JobOfferList
+    // EFFECTS: Construct a Job Offer, adds Job Offer to the JobOfferList
     private void addJobOffer() {
 
-        String CompanyName;
-        String JobPosition;
-        String JobLocation;
-        double AnnualSalary;
-        double SigningBonus;
-        double StockAmount;
-        double StockPriceCurrent;
         System.out.print("Add Job Offer");
 
         System.out.println("Input your job offer");
 
         System.out.println("Please input the Company name");
+        companyName = input.next();
 
         System.out.println("Please input the job position");
+        jobPosition = input.next();
+
+        System.out.println("Please input the job location");
+        jobLocation = input.next();
 
         System.out.println("Please input your annual salary");
+        annualSalary = input.nextDouble();
 
         System.out.println("Please input your signing bonus");
+        signingBonus = input.nextDouble();
 
         System.out.println("Please input the amount of stocks provided");
+        stockAmount = input.nextInt();
 
         System.out.println("Please input the current stock price");
+        stockPriceCurrent = input.nextDouble();
+
+        JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
+                annualSalary, signingBonus, stockAmount, stockPriceCurrent);
+
+        jobOfferList.addJobOffer(jobOffer);
+
+        System.out.println("The Job Offer has been added to the list successfully!");
 
     }
 
@@ -111,8 +135,39 @@ public class JobOfferComparatorApp {
     // MODIFIES: this
     // EFFECTS: removes Job Offer from the JobOfferList
     private void removeJobOffer() {
+
         System.out.println("Remove Job Offer");
         System.out.println("Please input which job offer you would like to remove");
+
+        System.out.println("Input your job offer");
+
+        System.out.println("Please input the Company name");
+        companyName = input.next();
+
+        System.out.println("Please input the job position");
+        jobPosition = input.next();
+
+        System.out.println("Please input the job location");
+        jobLocation = input.next();
+
+        System.out.println("Please input your annual salary");
+        annualSalary = input.nextDouble();
+
+        System.out.println("Please input your signing bonus");
+        signingBonus = input.nextDouble();
+
+        System.out.println("Please input the amount of stocks provided");
+        stockAmount = input.nextInt();
+
+        System.out.println("Please input the current stock price");
+        stockPriceCurrent = input.nextDouble();
+
+        JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
+                annualSalary, signingBonus, stockAmount, stockPriceCurrent);
+
+        jobOfferList.removeJobOffer(jobOffer);
+
+        System.out.println("The Job Offer is removed from the list successfully!");
 
     }
 
@@ -123,16 +178,84 @@ public class JobOfferComparatorApp {
 
     }
 
+    private void caltotalsalaryconsole() {
+        System.out.println("Calculate the total annual salary");
+        System.out.println("Input your job offer");
+
+        System.out.println("Please input the Company name");
+        companyName = input.next();
+
+        System.out.println("Please input the job position");
+        jobPosition = input.next();
+
+        System.out.println("Please input the job location");
+        jobLocation = input.next();
+
+        System.out.println("Please input your annual salary");
+        annualSalary = input.nextDouble();
+
+        System.out.println("Please input your signing bonus");
+        signingBonus = input.nextDouble();
+
+        System.out.println("Please input the amount of stocks provided");
+        stockAmount = input.nextInt();
+
+        System.out.println("Please input the current stock price");
+        stockPriceCurrent = input.nextDouble();
+
+        JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
+                annualSalary, signingBonus, stockAmount, stockPriceCurrent);
+
+        System.out.println("The total annual salary of being a " + jobOffer.getJobPosition()
+                + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation() + " is "
+                + calculateTotalSalary(jobOffer));
+
+    }
+
     private void addCityInfo() {
-        System.out.println("Add city information: City Name, Country Name, " +
-                "Living Expenses with rent per month (for 1 person only)");
+
+        System.out.println("Add city information: City Name, Country Name, "
+                + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
+        cityName = input.next();
 
         System.out.println("Please input the country (USA or CA)");
+        countryName = input.next();
 
         System.out.println("Please input the living expenses with rent per month (for 1 person only)");
+        livingExpenses = input.nextDouble();
+
+        City city = new City(cityName, countryName, livingExpenses);
+
+        cityList.addCityToList(city);
+
+        System.out.println("The city info is added successfully!");
+
     }
+
+    private void removeCityInfo() {
+
+        System.out.println("Add city information: City Name, Country Name, "
+                + "Living Expenses with rent per month (for 1 person only)");
+
+        System.out.println("Please input the name of the City");
+        cityName = input.next();
+
+        System.out.println("Please input the country (USA or CA)");
+        countryName = input.next();
+
+        System.out.println("Please input the living expenses with rent per month (for 1 person only)");
+        livingExpenses = input.nextDouble();
+
+        City city = new City(cityName, countryName, livingExpenses);
+
+        cityList.removeCityToList(city);
+
+        System.out.println("The city info is removed successfully!");
+
+    }
+
 
 
 }
