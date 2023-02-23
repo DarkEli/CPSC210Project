@@ -22,6 +22,21 @@ public class JobOfferTest {
         assertEquals(85630, calculateTotalSalary(jobOffer));
 
     }
+
+    @Test
+    public void TestgetCompanyName() {
+        assertEquals("GS",jobOffer.getCompanyName());
+    }
+
+    @Test
+    public void TestgetJobPosition() {
+        assertEquals("Software Developer", jobOffer.getJobPosition());
+    }
+
+    @Test
+    public void TestgetJobLocation() {
+        assertEquals("Vancouver", jobOffer.getJobLocation());
+    }
 }
 
 
