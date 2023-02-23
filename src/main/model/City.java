@@ -16,7 +16,7 @@ public class City {
         return livingExpensesAveragePerMonth;
     }
 
-    public String getNameCity() {
+    public String getCityName() {
         return cityName;
     }
 
