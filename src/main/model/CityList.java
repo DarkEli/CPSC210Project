@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CityList {
 
-    static ArrayList<City> cityList = new ArrayList<>();
+    ArrayList<City> cityList = new ArrayList<>();
 
     public void addCityToList(City city) {
         cityList.add(city);
