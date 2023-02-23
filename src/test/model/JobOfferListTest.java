@@ -81,8 +81,26 @@ public class JobOfferListTest {
 
     }
 
+    @Test
+    public void testmaxSalaryJobOfferOneOffer() {
+        jobOfferList1.addJobOffer(jobOffer1);
+        assertEquals("The best job offer is working at Google as a Product Manager with "
+                + "276300.0 as annual salary", jobOfferList1.maxSalaryJobOffer());
 
+    }
 
+    @Test
+    public void testmaxSalaryJobOfferMultipleOffer() {
+        jobOfferList1.addJobOffer(jobOffer2);
+        jobOfferList1.addJobOffer(jobOffer1);
+        assertEquals("The best job offer is working at Google as a Product Manager with "
+                + "276300.0 as annual salary", jobOfferList1.maxSalaryJobOffer());
+
+        jobOfferList1.addJobOffer(jobOffer3);
+        assertEquals("The best job offer is working at Google as a Product Manager with "
+                + "276300.0 as annual salary", jobOfferList1.maxSalaryJobOffer());
+
+    }
 
 
 }

@@ -2,9 +2,9 @@ package model;
 
 public class City {
 
-    private static String cityName;
-    private static String countryName;
-    private static double livingExpensesAveragePerMonth;
+    private String cityName;
+    private String countryName;
+    private double livingExpensesAveragePerMonth;
 
     public City(String cityName, String countryName, double livingExpensesAveragePerMonth) {
         this.cityName = cityName;
@@ -24,13 +24,5 @@ public class City {
         return countryName;
     }
 
-//    City Vancouver = new City("Vancouver", "Canada",
-//            4000, "CAD");
-//
-//    City Toronto = new City("Toronto", "Canada",
-//            2600, "CAD");
-//
-//    City NewYork = new City("New York", "United States",
-//            10000, "USD");
 
 }

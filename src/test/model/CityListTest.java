@@ -20,18 +20,18 @@ public class CityListTest {
     }
 
     @Test
-    public void TestConstructor() {
+    public void testConstructor() {
         assertEquals(0, cityList.cityList.size());
     }
 
     @Test
-    public void TestaddCityToListOneCity() {
+    public void testaddCityToListOneCity() {
         cityList.addCityToList(Vancouver);
         assertEquals(1, cityList.cityList.size());
     }
 
     @Test
-    public void TestaddCityToListMultipleCity() {
+    public void testaddCityToListMultipleCity() {
         cityList.addCityToList(Vancouver);
         assertEquals(1, cityList.cityList.size());
 
@@ -44,7 +44,7 @@ public class CityListTest {
     }
 
     @Test
-    public void TestremoveCityToListOneCity() {
+    public void testremoveCityToListOneCity() {
         cityList.addCityToList(Vancouver);
         assertEquals(1, cityList.cityList.size());
 
@@ -53,7 +53,7 @@ public class CityListTest {
     }
 
     @Test
-    public void TestremoveCityToListMultipleCity() {
+    public void testremoveCityToListMultipleCity() {
         cityList.addCityToList(Vancouver);
         cityList.addCityToList(Toronto);
         cityList.addCityToList(NewYork);

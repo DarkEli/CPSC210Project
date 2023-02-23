@@ -62,7 +62,7 @@ public class JobOfferComparatorApp {
         } else if (command.equals("f")) {
             findBestJobOffer();
         } else if (command.equals("ts")) {
-            caltotalsalaryconsole();
+            calTotalSalaryConsole();
         } else if (command.equals("c")) {
             addCityInfo();
         } else if (command.equals("rc")) {
@@ -175,10 +175,10 @@ public class JobOfferComparatorApp {
     // EFFECTS: finds the best Job Offer in the JobOfferList
     private void findBestJobOffer() {
         System.out.println("Find the Best Job Offer");
-
+        System.out.println(jobOfferList.maxSalaryJobOffer());
     }
 
-    private void caltotalsalaryconsole() {
+    private void calTotalSalaryConsole() {
         System.out.println("Calculate the total annual salary");
         System.out.println("Input your job offer");
 

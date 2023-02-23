@@ -2,25 +2,24 @@ package model;
 
 public class JobOffer {
 
-    private static String companyName;
-    private static String jobPosition;
-    private static String jobLocation;
-    private static double annualSalary;
-    private static double signingBonus;
-    private static int stockAmount;
-    private static double stockPriceCurrent;
+    private String companyName;
+    private String jobPosition;
+    private String jobLocation;
+    private double annualSalary;
+    private double signingBonus;
+    private int stockAmount;
+    private double stockPriceCurrent;
 
     public JobOffer(String companyName, String jobPosition, String jobLocation,
                     double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
 
-        JobOffer.companyName = companyName;
-        JobOffer.jobPosition = jobPosition;
-        JobOffer.jobLocation = jobLocation;
-        JobOffer.annualSalary = annualSalary;
-        JobOffer.signingBonus = signingBonus;
-        JobOffer.stockAmount = stockAmount;
-        JobOffer.stockPriceCurrent = stockPriceCurrent;
-
+        this.companyName = companyName;
+        this.jobPosition = jobPosition;
+        this.jobLocation = jobLocation;
+        this.annualSalary = annualSalary;
+        this.signingBonus = signingBonus;
+        this.stockAmount = stockAmount;
+        this.stockPriceCurrent = stockPriceCurrent;
     }
 
     public String getCompanyName() {
