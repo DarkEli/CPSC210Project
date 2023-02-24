@@ -48,11 +48,11 @@ public class JobOfferList {
     }
 
     public String showJobOfferCompanyAndPosition() {
-        String JobOfferInfo = "";
+        String jobOfferInfo = "";
         for (JobOffer jo: jobOfferList) {
-            JobOfferInfo += (jo.getCompanyName() + " : " + jo.getJobPosition() + " in " + jo.getJobLocation())
-            + "\n";
+            jobOfferInfo += (jo.getCompanyName() + " : " + jo.getJobPosition() + " in " + jo.getJobLocation())
+                + "\n";
         }
-        return JobOfferInfo;
+        return jobOfferInfo;
     }
 }

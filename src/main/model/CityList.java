@@ -29,7 +29,7 @@ public class CityList {
     public String showCityName() {
         String cityName = "";
         for (City city : cityList) {
-            cityName += city.getCityName()+ "\n";
+            cityName += city.getCityName() + "\n";
         }
         return cityName;
     }
