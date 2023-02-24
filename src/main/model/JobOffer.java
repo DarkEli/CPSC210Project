@@ -10,6 +10,8 @@ public class JobOffer {
     private int stockAmount;
     private double stockPriceCurrent;
 
+    //EFFECTS: Construct the JobOffer with company name, job position/title, job location,
+    // annual salary, signing bonus, stock amount and current stock price
     public JobOffer(String companyName, String jobPosition, String jobLocation,
                     double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
 

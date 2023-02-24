@@ -24,4 +24,12 @@ public class CityList {
         cityList.remove(city);
     }
 
+
+    //EFFECTS: Show the City name in the list
+    public void showCityName() {
+        for (City city: cityList) {
+            System.out.println(city.getCityName());
+        }
+    }
+
 }

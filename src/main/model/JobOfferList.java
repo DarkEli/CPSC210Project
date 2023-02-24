@@ -47,5 +47,10 @@ public class JobOfferList {
                 + " as a " + jobMaxSalaryJobPosition + " with " + max + " as annual salary";
     }
 
-
+    public void showJobOfferCompanyAndPosition() {
+        for (JobOffer jo: jobOfferList) {
+            System.out.println(jo.getCompanyName() + " : "
+                    + jo.getJobPosition() + " in " + jo.getJobLocation());
+        }
+    }
 }

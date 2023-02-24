@@ -71,4 +71,10 @@ public class CityListTest {
         assertEquals(0, cityList.cityList.size());
 
     }
+
+    @Test
+    public void testshowCityNameOneCity() {
+        cityList.addCityToList(Vancouver);
+
+    }
 }

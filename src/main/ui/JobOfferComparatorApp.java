@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 import static model.JobOffer.calculateTotalSalary;
 
+//For this class, I (Elliott Au) took reference of the TellerApp project and
+// did some modifications by myself
+//Link of the TellerApp project: https://github.students.cs.ubc.ca/CPSC210/TellerApp
+
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
     private JobOfferList jobOfferList;
@@ -55,18 +59,22 @@ public class JobOfferComparatorApp {
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String command)  {
-        if (command.equals("a")) {
+        if (command.equals("aj")) {
             addJobOffer();
         } else if (command.equals("rj")) {
             removeJobOffer();
+        } else if (command.equals("sj")) {
+            showJobOfferList();
         } else if (command.equals("f")) {
             findBestJobOffer();
         } else if (command.equals("ts")) {
             calTotalSalaryConsole();
-        } else if (command.equals("c")) {
+        } else if (command.equals("ac")) {
             addCityInfo();
         } else if (command.equals("rc")) {
             removeCityInfo();
+        } else if (command.equals("sc")) {
+            showCityList();
         } else {
             System.out.println("Not a valid input...");
         }
@@ -84,12 +92,14 @@ public class JobOfferComparatorApp {
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
         System.out.println("\nSelect from:");
-        System.out.println("\ta -> Add Job Offer");
+        System.out.println("\taj -> Add Job Offer");
         System.out.println("\trj -> Remove Job Offer");
+        System.out.println("\tsj -> Show all JobOffers in the list");
         System.out.println("\tts -> Calculate the total annual salary of 1 Job Offer");
         System.out.println("\tf -> Find the Best Job Offer");
-        System.out.println("\tc -> Add City Info");
+        System.out.println("\tac -> Add City Info");
         System.out.println("\trc -> Remove City Info");
+        System.out.println("\tsc -> Show all cities in the list");
         System.out.println("\tq -> Quit");
     }
 
@@ -260,6 +270,18 @@ public class JobOfferComparatorApp {
 
         System.out.println("The city info is removed successfully!");
 
+    }
+
+    //EFFECTS: Show the company name, job position and job location of the job offer
+    private void showJobOfferList() {
+        jobOfferList.showJobOfferCompanyAndPosition();
+        System.out.println("All Job Offers have been listed");
+    }
+
+    //EFFECTS: Show the name of the cities in the cityList
+    private void showCityList() {
+        cityList.showCityName();
+        System.out.println("All city names have been listed");
     }
 
 
