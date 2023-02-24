@@ -47,10 +47,12 @@ public class JobOfferList {
                 + " as a " + jobMaxSalaryJobPosition + " with " + max + " as annual salary";
     }
 
-    public void showJobOfferCompanyAndPosition() {
+    public String showJobOfferCompanyAndPosition() {
+        String JobOfferInfo = "";
         for (JobOffer jo: jobOfferList) {
-            System.out.println(jo.getCompanyName() + " : "
-                    + jo.getJobPosition() + " in " + jo.getJobLocation());
+            JobOfferInfo += (jo.getCompanyName() + " : " + jo.getJobPosition() + " in " + jo.getJobLocation())
+            + "\n";
         }
+        return JobOfferInfo;
     }
 }

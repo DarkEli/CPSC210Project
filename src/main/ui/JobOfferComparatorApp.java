@@ -46,7 +46,7 @@ public class JobOfferComparatorApp {
             command = input.next();
             command = command.toLowerCase();
 
-            if (command.equals("q")) {
+            if (command.equals("0")) {
                 keepGoing = false;
             } else {
                 processCommand(command);
@@ -59,21 +59,21 @@ public class JobOfferComparatorApp {
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String command)  {
-        if (command.equals("aj")) {
+        if (command.equals("1")) {
             addJobOffer();
-        } else if (command.equals("rj")) {
+        } else if (command.equals("2")) {
             removeJobOffer();
-        } else if (command.equals("sj")) {
+        } else if (command.equals("3")) {
             showJobOfferList();
-        } else if (command.equals("f")) {
+        } else if (command.equals("4")) {
             findBestJobOffer();
-        } else if (command.equals("ts")) {
+        } else if (command.equals("5")) {
             calTotalSalaryConsole();
-        } else if (command.equals("ac")) {
+        } else if (command.equals("6")) {
             addCityInfo();
-        } else if (command.equals("rc")) {
+        } else if (command.equals("7")) {
             removeCityInfo();
-        } else if (command.equals("sc")) {
+        } else if (command.equals("8")) {
             showCityList();
         } else {
             System.out.println("Not a valid input...");
@@ -92,15 +92,15 @@ public class JobOfferComparatorApp {
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
         System.out.println("\nSelect from:");
-        System.out.println("\taj -> Add Job Offer");
-        System.out.println("\trj -> Remove Job Offer");
-        System.out.println("\tsj -> Show all JobOffers in the list");
-        System.out.println("\tts -> Calculate the total annual salary of 1 Job Offer");
-        System.out.println("\tf -> Find the Best Job Offer");
-        System.out.println("\tac -> Add City Info");
-        System.out.println("\trc -> Remove City Info");
-        System.out.println("\tsc -> Show all cities in the list");
-        System.out.println("\tq -> Quit");
+        System.out.println("\t1 -> Add Job Offer");
+        System.out.println("\t2 -> Remove Job Offer");
+        System.out.println("\t3 -> Show all JobOffers in the list");
+        System.out.println("\t4 -> Find the Best Job Offer");
+        System.out.println("\t5 -> Calculate the total annual salary of 1 Job Offer");
+        System.out.println("\t6 -> Add City Info");
+        System.out.println("\t7 -> Remove City Info");
+        System.out.println("\t8 -> Show all cities in the list");
+        System.out.println("\t0 -> Quit");
     }
 
     // MODIFIES: this
@@ -274,13 +274,13 @@ public class JobOfferComparatorApp {
 
     //EFFECTS: Show the company name, job position and job location of the job offer
     private void showJobOfferList() {
-        jobOfferList.showJobOfferCompanyAndPosition();
+        System.out.println(jobOfferList.showJobOfferCompanyAndPosition());
         System.out.println("All Job Offers have been listed");
     }
 
     //EFFECTS: Show the name of the cities in the cityList
     private void showCityList() {
-        cityList.showCityName();
+        System.out.println(cityList.showCityName());
         System.out.println("All city names have been listed");
     }
 

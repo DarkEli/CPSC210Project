@@ -26,10 +26,12 @@ public class CityList {
 
 
     //EFFECTS: Show the City name in the list
-    public void showCityName() {
-        for (City city: cityList) {
-            System.out.println(city.getCityName());
+    public String showCityName() {
+        String cityName = "";
+        for (City city : cityList) {
+            cityName += city.getCityName()+ "\n";
         }
+        return cityName;
     }
 
 }

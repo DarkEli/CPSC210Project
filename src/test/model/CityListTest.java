@@ -76,5 +76,20 @@ public class CityListTest {
     public void testshowCityNameOneCity() {
         cityList.addCityToList(Vancouver);
 
+        assertEquals("Vancouver\n", cityList.showCityName());
+
     }
+
+    @Test
+    public void testshowCityNameMultipleCity() {
+        cityList.addCityToList(Vancouver);
+        cityList.addCityToList(Toronto);
+        cityList.addCityToList(NewYork);
+
+        assertEquals("Vancouver\nToronto\nNew York\n", cityList.showCityName());
+
+    }
+
+
+
 }

@@ -102,5 +102,27 @@ public class JobOfferListTest {
 
     }
 
+    @Test
+    public void testshowJobOfferCompanyAndPositionOneOffer() {
+        jobOfferList1.addJobOffer(jobOffer1);
+        assertEquals("Google : Product Manager in New York\n",
+                jobOfferList1.showJobOfferCompanyAndPosition());
+
+
+    }
+
+    @Test
+    public void testshowJobOfferCompanyAndPositionMultipleOffer() {
+        jobOfferList1.addJobOffer(jobOffer1);
+        jobOfferList1.addJobOffer(jobOffer2);
+        jobOfferList1.addJobOffer(jobOffer3);
+        assertEquals("Google : Product Manager in New York\n" +
+                        "Microsoft : Software Developer in Vancouver\n" +
+                        "Apple : Software Developer in Palo Alto\n",
+                jobOfferList1.showJobOfferCompanyAndPosition());
+
+
+    }
+
 
 }
