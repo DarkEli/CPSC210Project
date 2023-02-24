@@ -7,16 +7,28 @@ import static model.JobOffer.calculateTotalSalary;
 
 public class JobOfferList {
 
+    //EFFECTS: Construct a list for saving the JobOffer
     ArrayList<JobOffer> jobOfferList = new ArrayList<>();
 
+
+    //REQUIRES: JobOffer
+    //MODIFIES: this
+    //EFFECTS: add the JobOffer to the list
     public void addJobOffer(JobOffer jo) {
         jobOfferList.add(jo);
     }
 
+
+    //REQUIRES: JobOffer
+    //MODIFIES: this
+    //EFFECTS: remove the JobOffer to the list
     public void removeJobOffer(JobOffer jo) {
         jobOfferList.remove(jo);
     }
 
+
+    //EFFECTS: Identifies the JobOffer with max (total) salary and return the message
+    // that shows the full info of the offer
     public String maxSalaryJobOffer() {
         double max = 0;
         String jobMaxSalaryCompanyName = null;
@@ -35,17 +47,5 @@ public class JobOfferList {
                 + " as a " + jobMaxSalaryJobPosition + " with " + max + " as annual salary";
     }
 
-//    public String maxSalaryJobOffer() {
-//        double a = 0;
-//        for (JobOffer jo: JobOfferList) {
-//            if (Calculator.CalculateTotalSalary(jo) > a) {
-//                a = Calculator.CalculateTotalSalary(jo);
-//                c = jo.getCompanyName();
-//                d = Calculator.CalculateTotalSalary(jo);
-//                e = jo.getJobPosition();
-//            }
-//        }
-//        return "Job Offer with Max Salary: " + e + " at " + c + "\n" + "Total Annual Salary: " + d;
-//    }
 
 }

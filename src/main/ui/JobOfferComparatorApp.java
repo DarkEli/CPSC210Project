@@ -94,7 +94,7 @@ public class JobOfferComparatorApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: Construct a Job Offer, adds Job Offer to the JobOfferList
+    // EFFECTS: Construct a Job Offer, adds that Job Offer to the JobOfferList
     private void addJobOffer() {
 
         System.out.print("Add Job Offer");
@@ -133,7 +133,7 @@ public class JobOfferComparatorApp {
 
 
     // MODIFIES: this
-    // EFFECTS: removes Job Offer from the JobOfferList
+    // EFFECTS: Construct a Job Offer, then removes that Job Offer from the JobOfferList
     private void removeJobOffer() {
 
         System.out.println("Remove Job Offer");
@@ -178,6 +178,8 @@ public class JobOfferComparatorApp {
         System.out.println(jobOfferList.maxSalaryJobOffer());
     }
 
+    //MODIFIES: this
+    //EFFECTS: calculate the total salary of the JobOffer
     private void calTotalSalaryConsole() {
         System.out.println("Calculate the total annual salary");
         System.out.println("Input your job offer");
@@ -212,6 +214,8 @@ public class JobOfferComparatorApp {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: add the City from the list
     private void addCityInfo() {
 
         System.out.println("Add city information: City Name, Country Name, "
@@ -234,6 +238,8 @@ public class JobOfferComparatorApp {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: remove the City from the list
     private void removeCityInfo() {
 
         System.out.println("Add city information: City Name, Country Name, "
