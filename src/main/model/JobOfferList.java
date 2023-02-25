@@ -23,13 +23,10 @@ public class JobOfferList {
     //MODIFIES: this
     //EFFECTS: remove the JobOffer to the list
 
-    public void removeJobOffer(String companyName, String jobPosition, String jobLocation,
-                               double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
+    public void removeJobOffer(String companyName, String jobPosition, String jobLocation) {
         for (JobOffer jo: jobOfferList) {
             if (jo.getCompanyName().equals(companyName) && jo.getJobPosition().equals(jobPosition)
-                    && jo.getJobLocation().equals(jobLocation) && jo.getAnnualSalary() == annualSalary
-                    && jo.getSigningBonus() == signingBonus && jo.getStockAmount() == stockAmount
-                    && jo.getStockPriceCurrent() == stockPriceCurrent) {
+                    && jo.getJobLocation().equals(jobLocation)) {
                 jobOfferList.remove(jo);
                 break;
             }

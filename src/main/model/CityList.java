@@ -20,10 +20,9 @@ public class CityList {
     //REQUIRES: City
     //MODIFIES: this
     //EFFECTS: remove the City from the list
-    public void removeCityToList(String cityName, String countryName, double livingExpenses) {
+    public void removeCityToList(String cityName, String countryName) {
         for (City c: cityList) {
-            if (c.getCountryName().equals(countryName) && c.getCityName().equals(cityName)
-                    && (c.getLivingExpenses() == livingExpenses)) {
+            if (c.getCountryName().equals(countryName) && c.getCityName().equals(cityName)) {
                 cityList.remove(c);
                 break;
             }

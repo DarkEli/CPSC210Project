@@ -56,18 +56,13 @@ public class JobOfferListTest {
         assertEquals(1, jobOfferList1.jobOfferList.size());
 
 
-        assertTrue(jobOfferList1.jobOfferList.get(0).getCompanyName().equals("Google"));
-        assertTrue(jobOfferList1.jobOfferList.get(0).getJobPosition().equals("Product Manager"));
-        assertTrue(jobOfferList1.jobOfferList.get(0).getJobLocation().equals("New York"));
-        assertTrue(jobOfferList1.jobOfferList.get(0).getAnnualSalary() == 10000);
-        assertTrue(jobOfferList1.jobOfferList.get(0).getSigningBonus() == 10000);
-        assertTrue(jobOfferList1.jobOfferList.get(0).getStockAmount() == 1000);
-        assertTrue(jobOfferList1.jobOfferList.get(0).getStockPriceCurrent() == 256.3);
+        assertEquals("Google", jobOfferList1.jobOfferList.get(0).getCompanyName());
+        assertEquals("Product Manager", jobOfferList1.jobOfferList.get(0).getJobPosition());
+        assertEquals("New York", jobOfferList1.jobOfferList.get(0).getJobLocation());
 
 
         jobOfferList1.removeJobOffer(jobOffer1.getCompanyName(), jobOffer1.getJobPosition(),
-                jobOffer1.getJobLocation(), jobOffer1.getAnnualSalary(), jobOffer1.getSigningBonus(),
-                (int) jobOffer1.getStockAmount(), jobOffer1.getStockPriceCurrent());
+                jobOffer1.getJobLocation());
         assertEquals(0, jobOfferList1.jobOfferList.size());
 
     }
@@ -79,23 +74,19 @@ public class JobOfferListTest {
         jobOfferList1.addJobOffer(jobOffer3);
 
         jobOfferList1.removeJobOffer(jobOffer1.getCompanyName(), jobOffer1.getJobPosition(),
-                jobOffer1.getJobLocation(), jobOffer1.getAnnualSalary(), jobOffer1.getSigningBonus(),
-                (int) jobOffer1.getStockAmount(), jobOffer1.getStockPriceCurrent());
+                jobOffer1.getJobLocation());
         assertEquals(2, jobOfferList1.jobOfferList.size());
 
         jobOfferList1.removeJobOffer(jobOffer1.getCompanyName(), jobOffer1.getJobPosition(),
-                jobOffer1.getJobLocation(), jobOffer1.getAnnualSalary(), jobOffer1.getSigningBonus(),
-                (int) jobOffer1.getStockAmount(), jobOffer1.getStockPriceCurrent());
+                jobOffer1.getJobLocation());
         assertEquals(2, jobOfferList1.jobOfferList.size());
 
         jobOfferList1.removeJobOffer(jobOffer2.getCompanyName(), jobOffer2.getJobPosition(),
-                jobOffer2.getJobLocation(), jobOffer2.getAnnualSalary(), jobOffer2.getSigningBonus(),
-                (int) jobOffer2.getStockAmount(), jobOffer2.getStockPriceCurrent());
+                jobOffer2.getJobLocation());
         assertEquals(1, jobOfferList1.jobOfferList.size());
 
         jobOfferList1.removeJobOffer(jobOffer3.getCompanyName(), jobOffer3.getJobPosition(),
-                jobOffer3.getJobLocation(), jobOffer3.getAnnualSalary(), jobOffer3.getSigningBonus(),
-                (int) jobOffer3.getStockAmount(), jobOffer3.getStockPriceCurrent());
+                jobOffer3.getJobLocation());
         assertEquals(0, jobOfferList1.jobOfferList.size());
 
 

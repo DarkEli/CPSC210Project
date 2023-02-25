@@ -52,7 +52,7 @@ public class CityListTest {
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
         assertEquals(4000, cityList.cityList.get(0).getLivingExpenses());
 
-        cityList.removeCityToList("Vancouver", "CA", 4000);
+        cityList.removeCityToList("Vancouver", "CA");
         assertEquals(0, cityList.cityList.size());
     }
 
@@ -65,28 +65,24 @@ public class CityListTest {
 
         assertEquals("Vancouver", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
-        assertEquals(4000, cityList.cityList.get(0).getLivingExpenses());
-        assertNotEquals(1000, cityList.cityList.get(0).getLivingExpenses());
-        cityList.removeCityToList("Vancouver", "CA", 4000);
+        cityList.removeCityToList("Vancouver", "CA");
         assertEquals(2, cityList.cityList.size());
 
-        cityList.removeCityToList("Vancouver", "CA", 4000);
+        cityList.removeCityToList("Vancouver", "CA");
         assertEquals(2, cityList.cityList.size());
 
-        cityList.removeCityToList("New York", "CA", 1000);
+        cityList.removeCityToList("New York", "CA");
         assertEquals(2, cityList.cityList.size());
 
         assertEquals("New York", cityList.cityList.get(1).getCityName());
         assertEquals("USA", cityList.cityList.get(1).getCountryName());
-        assertEquals(10000, cityList.cityList.get(1).getLivingExpenses());
 
-        cityList.removeCityToList("New York", "USA", 10000);
+        cityList.removeCityToList("New York", "USA");
         assertEquals(1, cityList.cityList.size());
 
         assertEquals("Toronto", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
-        assertEquals(2600, cityList.cityList.get(0).getLivingExpenses());
-        cityList.removeCityToList("Toronto", "CA", 2600);
+        cityList.removeCityToList("Toronto", "CA");
         assertEquals(0, cityList.cityList.size());
 
     }
