@@ -60,6 +60,15 @@ public class JobOfferListTest {
         assertEquals("Product Manager", jobOfferList1.jobOfferList.get(0).getJobPosition());
         assertEquals("New York", jobOfferList1.jobOfferList.get(0).getJobLocation());
 
+        jobOfferList1.removeJobOffer("Google", "Product Manager","Vancouver");
+        assertEquals(1, jobOfferList1.jobOfferList.size());
+
+        jobOfferList1.removeJobOffer("Apple", "Product Manager","New York");
+        assertEquals(1, jobOfferList1.jobOfferList.size());
+
+        jobOfferList1.removeJobOffer("Google", "Software Developer","New York");
+        assertEquals(1, jobOfferList1.jobOfferList.size());
+
 
         jobOfferList1.removeJobOffer(jobOffer1.getCompanyName(), jobOffer1.getJobPosition(),
                 jobOffer1.getJobLocation());

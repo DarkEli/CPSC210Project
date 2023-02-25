@@ -50,7 +50,15 @@ public class CityListTest {
 
         assertEquals("Vancouver", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
-        assertEquals(4000, cityList.cityList.get(0).getLivingExpenses());
+
+        cityList.removeCityToList("Vancouver", "USA");
+        assertEquals(1, cityList.cityList.size());
+
+        cityList.removeCityToList("New York", "USA");
+        assertEquals(1, cityList.cityList.size());
+
+        cityList.removeCityToList("New York", "CA");
+        assertEquals(1, cityList.cityList.size());
 
         cityList.removeCityToList("Vancouver", "CA");
         assertEquals(0, cityList.cityList.size());
