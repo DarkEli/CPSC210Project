@@ -21,8 +21,13 @@ decides to work there. The user is able to compare multiple offers through a bar
 
 - As a user, I want to be able to select the companies that I’ve got offers from.
 - As a user, I want to be able to add companies that are not pre-saved in the application.
-- As a user, I want to be able to input the offer (salary + signing bonus + stock).
-- As a user, I want to be able to select the office location.
+- As a user, I want to be able to input the job offer (salary + signing bonus + stock).
+- As a user, I want to be able to input multiple job offers.
+- As a user, I want to be able to find the best job offer (with the highest salary).
+- As a user, I want to be able to see all the job offer info.
+- As a user, I want to be able to select the city.
+- As a user, I want to be able to add the city.
+- As a user, I want to be able to see all the city info.
 - As a user, I want to be able to see the average income of the workers of that company.
 - As a user, I want to be able to add companies that have sent me an offer to a list.
 - As a user, I want to be able to see the comparison chart.

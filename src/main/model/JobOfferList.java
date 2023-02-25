@@ -47,11 +47,14 @@ public class JobOfferList {
                 + " as a " + jobMaxSalaryJobPosition + " with " + max + " as annual salary";
     }
 
+
+    //EFFECTS: Return a string that shows the job offer info
+    // (Company that gives the JobOffer and the job position)
     public String showJobOfferCompanyAndPosition() {
         String jobOfferInfo = "";
-        for (JobOffer jo: jobOfferList) {
-            jobOfferInfo += (jo.getCompanyName() + " : " + jo.getJobPosition() + " in " + jo.getJobLocation())
-                + "\n";
+        for (JobOffer jobOffer: jobOfferList) {
+            jobOfferInfo += (jobOffer.getCompanyName() + " : " + jobOffer.getJobPosition() + " in "
+                    + jobOffer.getJobLocation()) + "\n";
         }
         return jobOfferInfo;
     }
