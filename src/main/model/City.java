@@ -8,6 +8,7 @@ public class City {
 
 
     //EFFECTS: Construct City with City name, Country name, and average living expenses per month
+    //For average living expenses per month, it must be a positive double
     public City(String cityName, String countryName, double livingExpensesAveragePerMonth) {
         this.cityName = cityName;
         this.countryName = countryName;

@@ -19,7 +19,7 @@ public class JobOfferList {
     }
 
 
-    //REQUIRES: JobOffer
+    //REQUIRES: String companyName, String jobPosition, String jobLocation
     //MODIFIES: this
     //EFFECTS: remove the JobOffer to the list
 

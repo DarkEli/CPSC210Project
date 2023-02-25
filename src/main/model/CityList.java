@@ -17,7 +17,7 @@ public class CityList {
 
 
 
-    //REQUIRES: City
+    //REQUIRES: String cityName, String countryName
     //MODIFIES: this
     //EFFECTS: remove the City from the list
     public void removeCityToList(String cityName, String countryName) {

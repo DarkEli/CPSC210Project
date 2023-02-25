@@ -12,6 +12,7 @@ public class JobOffer {
 
     //EFFECTS: Construct the JobOffer with company name, job position/title, job location,
     // annual salary, signing bonus, stock amount and current stock price
+    // For annual salary, signing bonus, stock amount and current stock price, it must be positive number (int/ double)
     public JobOffer(String companyName, String jobPosition, String jobLocation,
                     double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
 
