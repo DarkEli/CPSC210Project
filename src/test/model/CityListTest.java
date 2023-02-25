@@ -15,7 +15,7 @@ public class CityListTest {
     public void setup() {
         Vancouver = new City("Vancouver", "CA", 4000);
         Toronto = new City("Toronto", "CA", 2600);
-        NewYork = new City("New York", "US", 10000);
+        NewYork = new City("New York", "USA", 10000);
         cityList = new CityList();
     }
 
@@ -73,10 +73,10 @@ public class CityListTest {
         assertEquals(2, cityList.cityList.size());
 
         assertEquals("New York", cityList.cityList.get(1).getCityName());
-        assertEquals("US", cityList.cityList.get(1).getCountryName());
+        assertEquals("USA", cityList.cityList.get(1).getCountryName());
         assertEquals(10000, cityList.cityList.get(1).getLivingExpenses());
 
-        cityList.removeCityToList("New York", "US", 10000);
+        cityList.removeCityToList("New York", "USA", 10000);
         assertEquals(1, cityList.cityList.size());
 
         assertEquals("Toronto", cityList.cityList.get(0).getCityName());
