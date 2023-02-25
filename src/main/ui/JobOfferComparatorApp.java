@@ -175,7 +175,8 @@ public class JobOfferComparatorApp {
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
 
-        jobOfferList.removeJobOffer(jobOffer);
+        jobOfferList.removeJobOffer(companyName, jobPosition, jobLocation, annualSalary, signingBonus,
+                stockAmount, stockPriceCurrent);
 
         System.out.println("The Job Offer is removed from the list successfully!");
 
@@ -266,7 +267,7 @@ public class JobOfferComparatorApp {
 
         City city = new City(cityName, countryName, livingExpenses);
 
-        cityList.removeCityToList(city);
+        cityList.removeCityToList(cityName, countryName, livingExpenses);
 
         System.out.println("The city info is removed successfully!");
 

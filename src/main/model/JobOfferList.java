@@ -22,10 +22,19 @@ public class JobOfferList {
     //REQUIRES: JobOffer
     //MODIFIES: this
     //EFFECTS: remove the JobOffer to the list
-    public void removeJobOffer(JobOffer jo) {
-        jobOfferList.remove(jo);
-    }
 
+    public void removeJobOffer(String companyName, String jobPosition, String jobLocation,
+                               double annualSalary, double signingBonus, int stockAmount, double stockPriceCurrent) {
+        for (JobOffer jo: jobOfferList) {
+            if (jo.getCompanyName().equals(companyName) && jo.getJobPosition().equals(jobPosition)
+                    && jo.getJobLocation().equals(jobLocation) && jo.getAnnualSalary() == annualSalary
+                    && jo.getSigningBonus() == signingBonus && jo.getStockAmount() == stockAmount
+                    && jo.getStockPriceCurrent() == stockPriceCurrent) {
+                jobOfferList.remove(jo);
+                break;
+            }
+        }
+    }
 
     //EFFECTS: Identifies the JobOffer with max (total) salary and return the message
     // that shows the full info of the offer
