@@ -56,13 +56,13 @@ public class JobOfferListTest {
         assertEquals(1, jobOfferList1.jobOfferList.size());
 
 
-        assertEquals("Google", jobOfferList1.jobOfferList.get(0).getCompanyName());
-        assertEquals("Product Manager", jobOfferList1.jobOfferList.get(0).getJobPosition());
-        assertEquals("New York", jobOfferList1.jobOfferList.get(0).getJobLocation());
-        assertEquals(10000, jobOfferList1.jobOfferList.get(0).getAnnualSalary());
-        assertEquals(10000, jobOfferList1.jobOfferList.get(0).getSigningBonus());
-        assertEquals(1000, jobOfferList1.jobOfferList.get(0).getStockAmount());
-        assertEquals(256.3, jobOfferList1.jobOfferList.get(0).getStockPriceCurrent());
+        assertTrue(jobOfferList1.jobOfferList.get(0).getCompanyName().equals("Google"));
+        assertTrue(jobOfferList1.jobOfferList.get(0).getJobPosition().equals("Product Manager"));
+        assertTrue(jobOfferList1.jobOfferList.get(0).getJobLocation().equals("New York"));
+        assertTrue(jobOfferList1.jobOfferList.get(0).getAnnualSalary() == 10000);
+        assertTrue(jobOfferList1.jobOfferList.get(0).getSigningBonus() == 10000);
+        assertTrue(jobOfferList1.jobOfferList.get(0).getStockAmount() == 1000);
+        assertTrue(jobOfferList1.jobOfferList.get(0).getStockPriceCurrent() == 256.3);
 
 
         jobOfferList1.removeJobOffer(jobOffer1.getCompanyName(), jobOffer1.getJobPosition(),
