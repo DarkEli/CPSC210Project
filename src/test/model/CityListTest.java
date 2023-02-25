@@ -48,6 +48,10 @@ public class CityListTest {
         cityList.addCityToList(Vancouver);
         assertEquals(1, cityList.cityList.size());
 
+        assertEquals("Vancouver", Vancouver.getCityName());
+        assertEquals("CA", Vancouver.getCountryName());
+        assertEquals(4000, Vancouver.getLivingExpenses());
+
         cityList.removeCityToList("Vancouver", "CA", 4000);
         assertEquals(0, cityList.cityList.size());
     }
