@@ -31,4 +31,7 @@ decides to work there. The user is able to compare multiple offers through a bar
 - As a user, I want to be able to see the average income of the workers of that company.
 - As a user, I want to be able to add companies that have sent me an offer to a list.
 - As a user, I want to be able to see the comparison chart.
+- As a user, I want to be able to save my JobOfferList and CityList to file (if I so choose)
+- As a user, I want to be able to be able to load my JobOfferList and CityList from file (if I so choose)
+
 
