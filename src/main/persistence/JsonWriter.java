@@ -1,9 +1,7 @@
 package persistence;
-import model.City;
 import model.CityList;
-import model.JobOffer;
-import model.JobOfferList;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -27,7 +25,12 @@ public class JsonWriter {
         writer = new PrintWriter(new File(destination));
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of workroom to file
+    public void write(CityList cityList) {
+        JSONObject json = cityList.ObjectToJson();
+        saveToFile(json.toString(TAB));
+    }
 
     // MODIFIES: this
     // EFFECTS: closes writer

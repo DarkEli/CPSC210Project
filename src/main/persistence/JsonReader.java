@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 import org.json.*;
 
-// Represents a reader that reads workroom from JSON data stored in file
+// Represents a reader that reads CityList from JSON data stored in file
 public class JsonReader {
     private String source;
 
@@ -28,10 +28,6 @@ public class JsonReader {
         return parseCityList(jsonObject);
     }
 
-    private CityList parseCityList(JSONObject jsonObject) {
-        CityList cl = new CityList();
-    }
-
     // EFFECTS: reads source file as string and returns it
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
@@ -43,6 +39,30 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
+    private CityList parseCityList(JSONObject jsonObject) {
+        CityList cityList = new CityList();
+        addCityToList(cityList, jsonObject);
+        return cityList;
+    }
 
+    // MODIFIES: City
+    // EFFECTS: parses CityList from JSON object
+    private void addCityToList(CityList cityList, JSONObject jsonObject) {
+        JSONArray jsonArray = jsonObject.getJSONArray("cityList");
+        for (Object json : jsonArray) {
+            JSONObject nextCity = (JSONObject) json;
+            addCity(cityList, nextCity);
+        }
+    }
+
+    // MODIFIES: wr
+    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    private void addCity(CityList cityList, JSONObject jsonObject) {
+        String cityName = jsonObject.getString("cityName");
+        String countryName = jsonObject.getString("countryName");
+        double livingExpensesAveragePerMonth = jsonObject.getDouble("livingExpensesAveragePerMonth");
+        City city = new City(cityName, countryName, livingExpensesAveragePerMonth);
+        cityList.addCityToList(city);
+    }
 
 }

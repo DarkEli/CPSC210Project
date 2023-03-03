@@ -1,8 +1,9 @@
 package model;
 
-import persistence.Writable;
+import org.json.JSONObject;
+import persistence.WritableObject;
 
-public class City {
+public class City implements WritableObject {
 
     private String cityName;
     private String countryName;
@@ -34,6 +35,15 @@ public class City {
     //EFFECTS: return the CountryName where the city is located
     public String getCountryName() {
         return countryName;
+    }
+
+    @Override
+    public JSONObject ObjectToJson() {
+        JSONObject ObjectToJson = new JSONObject();
+        ObjectToJson.put("cityName", cityName);
+        ObjectToJson.put("countryName", countryName);
+        ObjectToJson.put("livingExpensesAveragePerMonth", livingExpensesAveragePerMonth);
+        return ObjectToJson;
     }
 
 

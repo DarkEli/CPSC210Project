@@ -1,18 +1,20 @@
 package model;
 
-import persistence.Writable;
+import org.json.JSONObject;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
-import persistence.Writable;
+import persistence.WritableObject;
 
 import java.util.ArrayList;
 
-public class CityList implements Writable {
+public class CityList implements WritableObject {
 
-    //EFFECTS: construct a list for saving the City info
-    ArrayList<City> cityList = new ArrayList<>();
+    ArrayList<City> cityList;
 
+    public CityList() {
+        //EFFECTS: construct a list for saving the City info
+        cityList = new ArrayList<>();
+    }
 
     //REQUIRES: City
     //MODIFIES: this
@@ -45,8 +47,23 @@ public class CityList implements Writable {
         return cityName;
     }
 
-    @Override
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
+
+    public JSONArray CityListToJson() {
+        JSONArray ArrayToJson = new JSONArray();
+
+        for (City city : cityList) {
+            ArrayToJson.put(city.ObjectToJson());
+        }
+
+        return ArrayToJson;
     }
+
+    @Override
+    public JSONObject ObjectToJson() {
+        JSONObject json = new JSONObject();
+        json.put("cityList", CityListToJson());
+        return json;
+    }
+
+
 }

@@ -2,6 +2,14 @@ package ui;
 
 import model.*;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONWriter;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import static model.JobOffer.calculateTotalSalary;
@@ -26,10 +34,16 @@ public class JobOfferComparatorApp {
     String cityName;
     String countryName;
     double livingExpenses;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+    private static final String JSON_STORE = "./data/myFile2.json";
 
-
-    // EFFECTS: runs the teller application
-    public JobOfferComparatorApp() {
+    //EFFECTS: runs the teller application
+    public JobOfferComparatorApp() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        cityList = new CityList();
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runComparator();
     }
 
@@ -75,6 +89,10 @@ public class JobOfferComparatorApp {
             removeCityInfo();
         } else if (command.equals("8")) {
             showCityList();
+        } else if (command.equals("9")) {
+            saveCityList();
+        } else if (command.equals("10")) {
+            loadCityList();
         } else {
             System.out.println("Not a valid input...");
         }
@@ -101,6 +119,11 @@ public class JobOfferComparatorApp {
         System.out.println("\t7 -> Remove City Info");
         System.out.println("\t8 -> Show all cities in the list");
         System.out.println("\t0 -> Quit");
+        System.out.println("\tSJ -> Save JobOfferList");
+        System.out.println("\tLJ -> Load JobOfferList");
+        System.out.println("\t9 -> Save CityList");
+        System.out.println("\t10 -> Load CityList");
+
     }
 
     // MODIFIES: JobOfferList
@@ -282,6 +305,29 @@ public class JobOfferComparatorApp {
     private void showCityList() {
         System.out.println(cityList.showCityName());
         System.out.println("All city names have been listed");
+    }
+
+    // EFFECTS: saves the workroom to file
+    private void saveCityList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(cityList);
+            jsonWriter.close();
+            System.out.println("Saved city list to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadCityList() {
+        try {
+            cityList = jsonReader.read();
+            System.out.println("Loaded city list from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
 
