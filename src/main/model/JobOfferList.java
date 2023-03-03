@@ -1,14 +1,22 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.WritableObject;
+
 import java.util.ArrayList;
 
 import static model.JobOffer.calculateTotalSalary;
 
 
-public class JobOfferList {
+public class JobOfferList implements WritableObject {
+
+    ArrayList<JobOffer> jobOfferList;
 
     //EFFECTS: Construct a list for saving the JobOffer
-    ArrayList<JobOffer> jobOfferList = new ArrayList<>();
+    public JobOfferList() {
+        jobOfferList = new ArrayList<>();
+    }
 
 
     //REQUIRES: JobOffer
@@ -63,5 +71,22 @@ public class JobOfferList {
                     + jobOffer.getJobLocation()) + "\n";
         }
         return jobOfferInfo;
+    }
+
+    public JSONArray JobOfferListToJson() {
+        JSONArray ArrayToJson = new JSONArray();
+
+        for (JobOffer jobOffer : jobOfferList) {
+            ArrayToJson.put(jobOffer.ObjectToJson());
+        }
+
+        return ArrayToJson;
+    }
+
+    @Override
+    public JSONObject ObjectToJson() {
+        JSONObject json = new JSONObject();
+        json.put("jobOfferList", JobOfferListToJson());
+        return json;
     }
 }

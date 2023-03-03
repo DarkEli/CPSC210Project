@@ -1,6 +1,9 @@
 package model;
 
-public class JobOffer {
+import org.json.JSONObject;
+import persistence.WritableObject;
+
+public class JobOffer implements WritableObject {
 
     private String companyName;
     private String jobPosition;
@@ -75,6 +78,19 @@ public class JobOffer {
     //(Sum up Annual Salary + Signing Bonus + StockAmount * Current Stock Price)
     public static double calculateTotalSalary(JobOffer jo) {
         return (jo.getAnnualSalary() + jo.getSigningBonus() + (jo.getStockAmount() * jo.getStockPriceCurrent()));
+    }
+
+    @Override
+    public JSONObject ObjectToJson() {
+        JSONObject ObjectToJson = new JSONObject();
+        ObjectToJson.put("companyName", companyName);
+        ObjectToJson.put("jobPosition", jobPosition);
+        ObjectToJson.put("jobLocation", jobLocation);
+        ObjectToJson.put("annualSalary", annualSalary);
+        ObjectToJson.put("signingBonus", signingBonus);
+        ObjectToJson.put("stockAmount", stockAmount);
+        ObjectToJson.put("stockPriceCurrent", stockPriceCurrent);
+        return ObjectToJson;
     }
 }
 

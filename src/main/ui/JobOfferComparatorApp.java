@@ -2,9 +2,6 @@ package ui;
 
 import model.*;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONWriter;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -93,6 +90,10 @@ public class JobOfferComparatorApp {
             saveCityList();
         } else if (command.equals("10")) {
             loadCityList();
+        } else if (command.equals("11")) {
+            saveJobOfferList();
+        } else if (command.equals("12")) {
+            loadJobOfferList();
         } else {
             System.out.println("Not a valid input...");
         }
@@ -119,8 +120,8 @@ public class JobOfferComparatorApp {
         System.out.println("\t7 -> Remove City Info");
         System.out.println("\t8 -> Show all cities in the list");
         System.out.println("\t0 -> Quit");
-        System.out.println("\tSJ -> Save JobOfferList");
-        System.out.println("\tLJ -> Load JobOfferList");
+        System.out.println("\t11 -> Save JobOfferList");
+        System.out.println("\t12 -> Load JobOfferList");
         System.out.println("\t9 -> Save CityList");
         System.out.println("\t10 -> Load CityList");
 
@@ -311,7 +312,7 @@ public class JobOfferComparatorApp {
     private void saveCityList() {
         try {
             jsonWriter.open();
-            jsonWriter.write(cityList);
+            jsonWriter.writeCityList(cityList);
             jsonWriter.close();
             System.out.println("Saved city list to " + JSON_STORE);
         } catch (FileNotFoundException e) {
@@ -323,8 +324,30 @@ public class JobOfferComparatorApp {
     // EFFECTS: loads workroom from file
     private void loadCityList() {
         try {
-            cityList = jsonReader.read();
+            cityList = jsonReader.readCityList();
             System.out.println("Loaded city list from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
+
+    private void saveJobOfferList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.writeJobOfferList(jobOfferList);
+            jsonWriter.close();
+            System.out.println("Saved job offer list to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadJobOfferList() {
+        try {
+            jobOfferList = jsonReader.readJobOfferList();
+            System.out.println("Loaded job offer list from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }

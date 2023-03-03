@@ -1,7 +1,7 @@
 package persistence;
 import model.CityList;
 
-import org.json.JSONArray;
+import model.JobOfferList;
 import org.json.JSONObject;
 
 
@@ -27,8 +27,13 @@ public class JsonWriter {
 
     // MODIFIES: this
     // EFFECTS: writes JSON representation of workroom to file
-    public void write(CityList cityList) {
+    public void writeCityList(CityList cityList) {
         JSONObject json = cityList.ObjectToJson();
+        saveToFile(json.toString(TAB));
+    }
+
+    public void writeJobOfferList(JobOfferList jobOfferList) {
+        JSONObject json = jobOfferList.ObjectToJson();
         saveToFile(json.toString(TAB));
     }
 
