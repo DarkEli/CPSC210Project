@@ -1,8 +1,14 @@
 package model;
 
+import persistence.Writable;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
-public class CityList {
+public class CityList implements Writable {
 
     //EFFECTS: construct a list for saving the City info
     ArrayList<City> cityList = new ArrayList<>();
@@ -39,4 +45,8 @@ public class CityList {
         return cityName;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+    }
 }

@@ -1,5 +1,7 @@
 package model;
 
+import persistence.Writable;
+
 public class City {
 
     private String cityName;
