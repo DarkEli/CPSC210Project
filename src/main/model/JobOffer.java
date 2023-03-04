@@ -81,16 +81,16 @@ public class JobOffer implements WritableObject {
     }
 
     @Override
-    public JSONObject ObjectToJson() {
-        JSONObject ObjectToJson = new JSONObject();
-        ObjectToJson.put("companyName", companyName);
-        ObjectToJson.put("jobPosition", jobPosition);
-        ObjectToJson.put("jobLocation", jobLocation);
-        ObjectToJson.put("annualSalary", annualSalary);
-        ObjectToJson.put("signingBonus", signingBonus);
-        ObjectToJson.put("stockAmount", stockAmount);
-        ObjectToJson.put("stockPriceCurrent", stockPriceCurrent);
-        return ObjectToJson;
+    public JSONObject objectToJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("companyName", companyName);
+        jsonObject.put("jobPosition", jobPosition);
+        jsonObject.put("jobLocation", jobLocation);
+        jsonObject.put("annualSalary", annualSalary);
+        jsonObject.put("signingBonus", signingBonus);
+        jsonObject.put("stockAmount", stockAmount);
+        jsonObject.put("stockPriceCurrent", stockPriceCurrent);
+        return jsonObject;
     }
 }
 

@@ -1,4 +1,5 @@
 package ui;
+
 import java.io.FileNotFoundException;
 
 //For the Main class, I (Elliott Au) took reference of the TellerApp project and
@@ -7,7 +8,7 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) {
         try {
-        new JobOfferComparatorApp();
+            new JobOfferComparatorApp();
         } catch (FileNotFoundException e) {
             System.out.println("Unable to run application: file not found");
         }

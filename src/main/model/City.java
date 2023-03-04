@@ -38,12 +38,12 @@ public class City implements WritableObject {
     }
 
     @Override
-    public JSONObject ObjectToJson() {
-        JSONObject ObjectToJson = new JSONObject();
-        ObjectToJson.put("cityName", cityName);
-        ObjectToJson.put("countryName", countryName);
-        ObjectToJson.put("livingExpensesAveragePerMonth", livingExpensesAveragePerMonth);
-        return ObjectToJson;
+    public JSONObject objectToJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("cityName", cityName);
+        jsonObject.put("countryName", countryName);
+        jsonObject.put("livingExpensesAveragePerMonth", livingExpensesAveragePerMonth);
+        return jsonObject;
     }
 
 

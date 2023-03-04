@@ -1,20 +1,20 @@
 package persistence;
 
-import model.CityList;
-
+import model.JobOfferList;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
-import java.io.*;
+public class JsonWriterJobOfferList {
 
-// Represents a writer that writes JSON representation of workroom to file
-public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
     private String destination;
 
     // EFFECTS: constructs writer to write to destination file
-    public JsonWriter(String destination) {
+    public JsonWriterJobOfferList(String destination) {
         this.destination = destination;
     }
 
@@ -25,13 +25,11 @@ public class JsonWriter {
         writer = new PrintWriter(new File(destination));
     }
 
-    // MODIFIES: this
-    // EFFECTS: writes JSON representation of workroom to file
-    public void writeCityList(CityList cityList) {
-        JSONObject json = cityList.objectToJson();
+
+    public void writeJobOfferList(JobOfferList jobOfferList) {
+        JSONObject json = jobOfferList.objectToJson();
         saveToFile(json.toString(TAB));
     }
-
 
     // MODIFIES: this
     // EFFECTS: closes writer
@@ -44,4 +42,8 @@ public class JsonWriter {
     private void saveToFile(String json) {
         writer.print(json);
     }
+
 }
+
+
+

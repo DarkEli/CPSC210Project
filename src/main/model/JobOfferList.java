@@ -73,20 +73,20 @@ public class JobOfferList implements WritableObject {
         return jobOfferInfo;
     }
 
-    public JSONArray JobOfferListToJson() {
-        JSONArray ArrayToJson = new JSONArray();
+    public JSONArray jobOfferListToJson() {
+        JSONArray jsonArray = new JSONArray();
 
         for (JobOffer jobOffer : jobOfferList) {
-            ArrayToJson.put(jobOffer.ObjectToJson());
+            jsonArray.put(jobOffer.objectToJson());
         }
 
-        return ArrayToJson;
+        return jsonArray;
     }
 
     @Override
-    public JSONObject ObjectToJson() {
+    public JSONObject objectToJson() {
         JSONObject json = new JSONObject();
-        json.put("jobOfferList", JobOfferListToJson());
+        json.put("jobOfferList", jobOfferListToJson());
         return json;
     }
 }

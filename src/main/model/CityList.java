@@ -48,20 +48,20 @@ public class CityList implements WritableObject {
     }
 
 
-    public JSONArray CityListToJson() {
-        JSONArray ArrayToJson = new JSONArray();
+    public JSONArray cityListToJson() {
+        JSONArray jsonArray = new JSONArray();
 
         for (City city : cityList) {
-            ArrayToJson.put(city.ObjectToJson());
+            jsonArray.put(city.objectToJson());
         }
 
-        return ArrayToJson;
+        return jsonArray;
     }
 
     @Override
-    public JSONObject ObjectToJson() {
+    public JSONObject objectToJson() {
         JSONObject json = new JSONObject();
-        json.put("cityList", CityListToJson());
+        json.put("cityList", cityListToJson());
         return json;
     }
 

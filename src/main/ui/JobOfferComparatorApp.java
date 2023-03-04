@@ -3,7 +3,9 @@ package ui;
 import model.*;
 
 import persistence.JsonReader;
+import persistence.JsonReaderJobOfferList;
 import persistence.JsonWriter;
+import persistence.JsonWriterJobOfferList;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -33,14 +35,19 @@ public class JobOfferComparatorApp {
     double livingExpenses;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private static final String JSON_STORE = "./data/myFile2.json";
+    private JsonWriterJobOfferList jsonWriter1;
+    private JsonReaderJobOfferList jsonReader1;
+    private static final String JSON_STORE1 = "./data/myFile01.json";
+    private static final String JSON_STORE2 = "./data/myFile02.json";
 
     //EFFECTS: runs the teller application
     public JobOfferComparatorApp() throws FileNotFoundException {
         input = new Scanner(System.in);
         cityList = new CityList();
-        jsonWriter = new JsonWriter(JSON_STORE);
-        jsonReader = new JsonReader(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE1);
+        jsonWriter1 = new JsonWriterJobOfferList(JSON_STORE2);
+        jsonReader = new JsonReader(JSON_STORE1);
+        jsonReader1 = new JsonReaderJobOfferList(JSON_STORE2);
         runComparator();
     }
 
@@ -67,9 +74,10 @@ public class JobOfferComparatorApp {
         System.out.println("\nGoodbye!");
     }
 
+    @SuppressWarnings("methodlength")
     // MODIFIES: this
     // EFFECTS: processes user command
-    private void processCommand(String command)  {
+    private void processCommand(String command) {
         if (command.equals("1")) {
             addJobOffer();
         } else if (command.equals("2")) {
@@ -119,11 +127,11 @@ public class JobOfferComparatorApp {
         System.out.println("\t6 -> Add City Info");
         System.out.println("\t7 -> Remove City Info");
         System.out.println("\t8 -> Show all cities in the list");
-        System.out.println("\t0 -> Quit");
-        System.out.println("\t11 -> Save JobOfferList");
-        System.out.println("\t12 -> Load JobOfferList");
         System.out.println("\t9 -> Save CityList");
         System.out.println("\t10 -> Load CityList");
+        System.out.println("\t11 -> Save JobOfferList");
+        System.out.println("\t12 -> Load JobOfferList");
+        System.out.println("\t0 -> Quit");
 
     }
 
@@ -314,9 +322,9 @@ public class JobOfferComparatorApp {
             jsonWriter.open();
             jsonWriter.writeCityList(cityList);
             jsonWriter.close();
-            System.out.println("Saved city list to " + JSON_STORE);
+            System.out.println("Saved city list to " + JSON_STORE1);
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
+            System.out.println("Unable to write to file: " + JSON_STORE1);
         }
     }
 
@@ -325,20 +333,20 @@ public class JobOfferComparatorApp {
     private void loadCityList() {
         try {
             cityList = jsonReader.readCityList();
-            System.out.println("Loaded city list from " + JSON_STORE);
+            System.out.println("Loaded city list from " + JSON_STORE1);
         } catch (IOException e) {
-            System.out.println("Unable to read from file: " + JSON_STORE);
+            System.out.println("Unable to read from file: " + JSON_STORE1);
         }
     }
 
     private void saveJobOfferList() {
         try {
-            jsonWriter.open();
-            jsonWriter.writeJobOfferList(jobOfferList);
-            jsonWriter.close();
-            System.out.println("Saved job offer list to " + JSON_STORE);
+            jsonWriter1.open();
+            jsonWriter1.writeJobOfferList(jobOfferList);
+            jsonWriter1.close();
+            System.out.println("Saved job offer list to " + JSON_STORE2);
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
+            System.out.println("Unable to write to file: " + JSON_STORE2);
         }
     }
 
@@ -346,13 +354,12 @@ public class JobOfferComparatorApp {
     // EFFECTS: loads workroom from file
     private void loadJobOfferList() {
         try {
-            jobOfferList = jsonReader.readJobOfferList();
-            System.out.println("Loaded job offer list from " + JSON_STORE);
+            jobOfferList = jsonReader1.readJobOfferList();
+            System.out.println("Loaded job offer list from " + JSON_STORE2);
         } catch (IOException e) {
-            System.out.println("Unable to read from file: " + JSON_STORE);
+            System.out.println("Unable to read from file: " + JSON_STORE2);
         }
     }
-
 
 
 }
