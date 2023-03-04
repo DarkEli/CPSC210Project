@@ -168,6 +168,20 @@ public class JobOfferListTest {
 
     }
 
+    @Test
+    public void testGetJobOffer() {
+        assertEquals(0, jobOfferList1.getJobOfferList().size());
+
+        jobOfferList1.addJobOffer(jobOffer1);
+        assertEquals(1, jobOfferList1.getJobOfferList().size());
+
+        jobOfferList1.addJobOffer(jobOffer2);
+        jobOfferList1.addJobOffer(jobOffer3);
+        assertEquals(3, jobOfferList1.getJobOfferList().size());
+
+
+    }
+
 }
 
 

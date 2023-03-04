@@ -2,9 +2,9 @@ package ui;
 
 import model.*;
 
-import persistence.JsonReader;
+import persistence.JsonReaderCityList;
 import persistence.JsonReaderJobOfferList;
-import persistence.JsonWriter;
+import persistence.JsonWriterCityList;
 import persistence.JsonWriterJobOfferList;
 
 import java.io.FileNotFoundException;
@@ -33,20 +33,20 @@ public class JobOfferComparatorApp {
     String cityName;
     String countryName;
     double livingExpenses;
-    private JsonWriter jsonWriter;
-    private JsonReader jsonReader;
+    private JsonWriterCityList jsonWriterCityList;
+    private JsonReaderCityList jsonReaderCityList;
     private JsonWriterJobOfferList jsonWriter1;
     private JsonReaderJobOfferList jsonReader1;
     private static final String JSON_STORE1 = "./data/myFile01.json";
-    private static final String JSON_STORE2 = "./data/myFile02.json";
+    private static final String JSON_STORE2 = "./data/testWriterJobOfferListOneJobOffer.json";
 
     //EFFECTS: runs the teller application
     public JobOfferComparatorApp() throws FileNotFoundException {
         input = new Scanner(System.in);
         cityList = new CityList();
-        jsonWriter = new JsonWriter(JSON_STORE1);
+        jsonWriterCityList = new JsonWriterCityList(JSON_STORE1);
         jsonWriter1 = new JsonWriterJobOfferList(JSON_STORE2);
-        jsonReader = new JsonReader(JSON_STORE1);
+        jsonReaderCityList = new JsonReaderCityList(JSON_STORE1);
         jsonReader1 = new JsonReaderJobOfferList(JSON_STORE2);
         runComparator();
     }
@@ -319,9 +319,9 @@ public class JobOfferComparatorApp {
     // EFFECTS: saves the workroom to file
     private void saveCityList() {
         try {
-            jsonWriter.open();
-            jsonWriter.writeCityList(cityList);
-            jsonWriter.close();
+            jsonWriterCityList.open();
+            jsonWriterCityList.writeCityList(cityList);
+            jsonWriterCityList.close();
             System.out.println("Saved city list to " + JSON_STORE1);
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE1);
@@ -332,7 +332,7 @@ public class JobOfferComparatorApp {
     // EFFECTS: loads workroom from file
     private void loadCityList() {
         try {
-            cityList = jsonReader.readCityList();
+            cityList = jsonReaderCityList.readCityList();
             System.out.println("Loaded city list from " + JSON_STORE1);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE1);

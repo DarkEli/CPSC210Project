@@ -2,8 +2,6 @@ package persistence;
 
 import model.City;
 import model.CityList;
-import model.JobOffer;
-import model.JobOfferList;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,11 +12,11 @@ import java.util.stream.Stream;
 import org.json.*;
 
 // Represents a reader that reads CityList from JSON data stored in file
-public class JsonReader {
+public class JsonReaderCityList {
     private String source;
 
     // EFFECTS: constructs reader to read from source file
-    public JsonReader(String source) {
+    public JsonReaderCityList(String source) {
         this.source = source;
     }
 

@@ -5,6 +5,8 @@ import org.json.JSONObject;
 import persistence.WritableObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static model.JobOffer.calculateTotalSalary;
 
@@ -88,5 +90,10 @@ public class JobOfferList implements WritableObject {
         JSONObject json = new JSONObject();
         json.put("jobOfferList", jobOfferListToJson());
         return json;
+    }
+
+    // EFFECTS: returns an unmodifiable list of thingies in this workroom
+    public List<JobOffer> getJobOfferList() {
+        return Collections.unmodifiableList(jobOfferList);
     }
 }
