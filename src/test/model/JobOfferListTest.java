@@ -147,4 +147,27 @@ public class JobOfferListTest {
     }
 
 
+    @Test
+    public void testJobOfferListToJson() {
+        jobOfferList1.addJobOffer(jobOffer1);
+        jobOfferList1.addJobOffer(jobOffer2);
+        jobOfferList1.addJobOffer(jobOffer3);
+
+        assertEquals(3, jobOfferList1.jobOfferListToJson().length());
+
+    }
+
+    @Test
+    public void testObjectToJson() {
+        jobOfferList1.addJobOffer(jobOffer1);
+        jobOfferList1.addJobOffer(jobOffer2);
+        jobOfferList1.addJobOffer(jobOffer3);
+
+        assertEquals(3,jobOfferList1.objectToJson().getJSONArray("jobOfferList").length());
+        assertEquals(1, jobOfferList1.objectToJson().length());
+
+    }
+
 }
+
+

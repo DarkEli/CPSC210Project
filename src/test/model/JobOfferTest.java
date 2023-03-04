@@ -16,6 +16,7 @@ public class JobOfferTest {
     public void setup() {
         jobOffer = new JobOffer("GS", "Software Developer", "Vancouver",
                 10000, 50000, 100, 256.3);
+
         jsonObject = new JSONObject();
         jsonObject.put("companyName", "GS");
         jsonObject.put("jobPosition", "Software Developer");
@@ -56,8 +57,9 @@ public class JobOfferTest {
         assertEquals(50000, jsonObject.getDouble("signingBonus"));
         assertEquals(100, jsonObject.getInt("stockAmount"));
         assertEquals(256.3, jsonObject.getDouble("stockPriceCurrent"));
-
     }
+
+
 }
 
 
