@@ -1,5 +1,6 @@
 package model;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,6 +11,7 @@ public class JobOfferListTest {
     JobOffer jobOffer2;
     JobOffer jobOffer3;
     JobOfferList jobOfferList1;
+    JSONObject json;
 
     @BeforeEach
     public void setup() {

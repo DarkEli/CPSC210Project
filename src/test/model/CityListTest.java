@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -110,6 +112,27 @@ public class CityListTest {
         cityList.addCityToList(NewYork);
 
         assertEquals("Vancouver\nToronto\nNew York\n", cityList.showCityName());
+
+    }
+
+    @Test
+    public void testCityListToJson() {
+        cityList.addCityToList(Vancouver);
+        cityList.addCityToList(Toronto);
+        cityList.addCityToList(NewYork);
+
+        assertEquals(3, cityList.cityListToJson().length());
+
+    }
+
+    @Test
+    public void testObjectToJson() {
+        cityList.addCityToList(Vancouver);
+        cityList.addCityToList(Toronto);
+        cityList.addCityToList(NewYork);
+
+        assertEquals(3,cityList.objectToJson().getJSONArray("cityList").length());
+        assertEquals(1, cityList.objectToJson().length());
 
     }
 
