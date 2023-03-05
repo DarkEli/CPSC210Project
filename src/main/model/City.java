@@ -37,6 +37,8 @@ public class City implements WritableObject {
         return countryName;
     }
 
+
+    //EFFECTS: Turn City into a JSON object
     @Override
     public JSONObject objectToJson() {
         JSONObject jsonObject = new JSONObject();

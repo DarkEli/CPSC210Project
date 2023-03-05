@@ -80,6 +80,8 @@ public class JobOffer implements WritableObject {
         return (jo.getAnnualSalary() + jo.getSigningBonus() + (jo.getStockAmount() * jo.getStockPriceCurrent()));
     }
 
+
+    //EFFECTS: turn JobOffer into a JSON object
     @Override
     public JSONObject objectToJson() {
         JSONObject jsonObject = new JSONObject();

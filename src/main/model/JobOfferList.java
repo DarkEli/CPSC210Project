@@ -75,6 +75,8 @@ public class JobOfferList implements WritableObject {
         return jobOfferInfo;
     }
 
+
+    // EFFECTS: returns JobOfferList as a JSON array
     public JSONArray jobOfferListToJson() {
         JSONArray jsonArray = new JSONArray();
 
@@ -85,6 +87,8 @@ public class JobOfferList implements WritableObject {
         return jsonArray;
     }
 
+
+    //EFFECTS: turns JobOfferList into a JSON object
     @Override
     public JSONObject objectToJson() {
         JSONObject json = new JSONObject();
@@ -92,7 +96,7 @@ public class JobOfferList implements WritableObject {
         return json;
     }
 
-    // EFFECTS: returns an unmodifiable list of thingies in this workroom
+    // EFFECTS: returns an unmodifiable list of JobOffer (returns JobOfferList)
     public List<JobOffer> getJobOfferList() {
         return Collections.unmodifiableList(jobOfferList);
     }

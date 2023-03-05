@@ -26,7 +26,7 @@ public class JsonWriterCityList {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of workroom to file
+    // EFFECTS: writes JSON representation of CityList to file
     public void writeCityList(CityList cityList) {
         JSONObject json = cityList.objectToJson();
         saveToFile(json.toString(TAB));

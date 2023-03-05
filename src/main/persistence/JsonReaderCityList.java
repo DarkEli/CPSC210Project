@@ -20,6 +20,9 @@ public class JsonReaderCityList {
         this.source = source;
     }
 
+
+    // EFFECTS: reads CityList from file and returns it;
+    // throws IOException if an error occurs reading data from file
     public CityList readCityList() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
@@ -38,14 +41,16 @@ public class JsonReaderCityList {
         return contentBuilder.toString();
     }
 
+
+    // EFFECTS: parses CityList from JSON object and returns it
     private CityList parseCityList(JSONObject jsonObject) {
         CityList cityList = new CityList();
         addCityToList(cityList, jsonObject);
         return cityList;
     }
 
-    // MODIFIES: City
-    // EFFECTS: parses CityList from JSON object
+    // MODIFIES: CityList
+    // EFFECTS: parses CityList from JSON object and add the list to the CityList
     private void addCityToList(CityList cityList, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("cityList");
         for (Object json : jsonArray) {
@@ -54,8 +59,8 @@ public class JsonReaderCityList {
         }
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // MODIFIES: CityList
+    // EFFECTS: parses City from JSON object and adds it to CityList
     private void addCity(CityList cityList, JSONObject jsonObject) {
         String cityName = jsonObject.getString("cityName");
         String countryName = jsonObject.getString("countryName");

@@ -26,6 +26,9 @@ public class JsonReaderJobOfferList {
     }
 
 
+
+    // EFFECTS: reads JobOfferList from file and returns it;
+    // throws IOException if an error occurs reading data from file
     public JobOfferList readJobOfferList() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
@@ -43,13 +46,16 @@ public class JsonReaderJobOfferList {
         return contentBuilder.toString();
     }
 
-
+    // EFFECTS: parses JobOfferList from JSON object and returns it
     private JobOfferList parseJobOfferList(JSONObject jsonObject) {
         JobOfferList jobOfferList = new JobOfferList();
         addJobToList(jobOfferList, jsonObject);
         return jobOfferList;
     }
 
+
+    // MODIFIES: JobOfferList
+    // EFFECTS: parses JobOfferList from JSON object and add the list to the JobOfferList
     private void addJobToList(JobOfferList jobOfferList, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("jobOfferList");
         for (Object json : jsonArray) {
@@ -58,6 +64,9 @@ public class JsonReaderJobOfferList {
         }
     }
 
+
+    // MODIFIES: JobOfferList
+    // EFFECTS: parses JobOffer from JSON object and adds it to JobOfferList
     private void addJobOffer(JobOfferList jobOfferList, JSONObject jsonObject) {
         String companyName = jsonObject.getString("companyName");
         String jobPosition = jsonObject.getString("jobPosition");

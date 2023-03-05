@@ -13,9 +13,10 @@ import java.util.Scanner;
 
 import static model.JobOffer.calculateTotalSalary;
 
-//For this class, I (Elliott Au) took reference of the TellerApp project and
-// did some modifications by myself
+//For this class, I (Elliott Au) took reference of the TellerApp project and the JSON Workroom sample project
+//// did some modifications by myself
 //Link of the TellerApp project: https://github.students.cs.ubc.ca/CPSC210/TellerApp
+//Link of the Workroom project: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
@@ -316,7 +317,7 @@ public class JobOfferComparatorApp {
         System.out.println("All city names have been listed");
     }
 
-    // EFFECTS: saves the workroom to file
+    // EFFECTS: saves CityList to file
     private void saveCityList() {
         try {
             jsonWriterCityList.open();
@@ -328,8 +329,8 @@ public class JobOfferComparatorApp {
         }
     }
 
-    // MODIFIES: this
-    // EFFECTS: loads workroom from file
+
+    // EFFECTS: loads CityList from file
     private void loadCityList() {
         try {
             cityList = jsonReaderCityList.readCityList();
@@ -339,6 +340,7 @@ public class JobOfferComparatorApp {
         }
     }
 
+    // EFFECTS: saves JobOfferList from file
     private void saveJobOfferList() {
         try {
             jsonWriter1.open();
@@ -350,8 +352,8 @@ public class JobOfferComparatorApp {
         }
     }
 
-    // MODIFIES: this
-    // EFFECTS: loads workroom from file
+
+    // EFFECTS: loads JobOfferList from file
     private void loadJobOfferList() {
         try {
             jobOfferList = jsonReader1.readJobOfferList();

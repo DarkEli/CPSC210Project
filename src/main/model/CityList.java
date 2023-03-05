@@ -50,6 +50,7 @@ public class CityList implements WritableObject {
     }
 
 
+    // EFFECTS: returns cityList as a JSON array
     public JSONArray cityListToJson() {
         JSONArray jsonArray = new JSONArray();
 
@@ -60,6 +61,7 @@ public class CityList implements WritableObject {
         return jsonArray;
     }
 
+    //EFFECTS: turns the cityList into a JSON Object
     @Override
     public JSONObject objectToJson() {
         JSONObject json = new JSONObject();

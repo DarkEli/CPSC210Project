@@ -26,6 +26,8 @@ public class JsonWriterJobOfferList {
     }
 
 
+    // MODIFIES: this
+    // EFFECTS: writes JSON representation of JobOfferList to file
     public void writeJobOfferList(JobOfferList jobOfferList) {
         JSONObject json = jobOfferList.objectToJson();
         saveToFile(json.toString(TAB));
