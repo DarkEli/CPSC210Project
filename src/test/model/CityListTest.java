@@ -136,6 +136,17 @@ public class CityListTest {
 
     }
 
+    @Test
+    public void testGetCityList() {
+        assertEquals(0, cityList.getCityList().size());
 
+        cityList.addCityToList(Vancouver);
+        assertEquals(1, cityList.getCityList().size());
+
+        cityList.addCityToList(Toronto);
+        cityList.addCityToList(NewYork);
+        assertEquals(3, cityList.getCityList().size());
+
+    }
 
 }

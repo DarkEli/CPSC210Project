@@ -6,6 +6,8 @@ import org.json.JSONArray;
 import persistence.WritableObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CityList implements WritableObject {
 
@@ -63,6 +65,10 @@ public class CityList implements WritableObject {
         JSONObject json = new JSONObject();
         json.put("cityList", cityListToJson());
         return json;
+    }
+
+    public List<City> getCityList() {
+        return Collections.unmodifiableList(cityList);
     }
 
 

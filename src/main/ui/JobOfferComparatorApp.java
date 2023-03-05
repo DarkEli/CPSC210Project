@@ -37,8 +37,8 @@ public class JobOfferComparatorApp {
     private JsonReaderCityList jsonReaderCityList;
     private JsonWriterJobOfferList jsonWriter1;
     private JsonReaderJobOfferList jsonReader1;
-    private static final String JSON_STORE1 = "./data/myFile01.json";
-    private static final String JSON_STORE2 = "./data/testWriterJobOfferListOneJobOffer.json";
+    private static final String JSON_STORE1 = "./data/normalCityList.json";
+    private static final String JSON_STORE2 = "./data/normalJobOfferList.json";
 
     //EFFECTS: runs the teller application
     public JobOfferComparatorApp() throws FileNotFoundException {
