@@ -1,0 +1,29 @@
+{"jobOfferList": [
+    {
+        "stockAmount": 100,
+        "annualSalary": 10000,
+        "jobLocation": "New York",
+        "companyName": "Google",
+        "stockPriceCurrent": 200,
+        "signingBonus": 1000,
+        "jobPosition": "Product Manager"
+    },
+    {
+        "stockAmount": 100,
+        "annualSalary": 10005,
+        "jobLocation": "Palo Alto",
+        "companyName": "Apple",
+        "stockPriceCurrent": 121,
+        "signingBonus": 3000,
+        "jobPosition": "Software Developer"
+    },
+    {
+        "stockAmount": 100,
+        "annualSalary": 10002,
+        "jobLocation": "Vancouver",
+        "companyName": "Meta",
+        "stockPriceCurrent": 100,
+        "signingBonus": 1002,
+        "jobPosition": "Software Developer"
+    }
+]}
