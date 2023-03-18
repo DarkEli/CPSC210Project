@@ -49,21 +49,33 @@ public class Main extends JFrame implements ActionListener {
         AddJob.setText("AddJob");
         frame.add(AddJob);
 
+        ShowAllJobs = new JButton();
+        ShowAllJobs.setBounds(50, 240, 70,40);
+        ShowAllJobs.setText("ShowAllJobs");
+        frame.add(ShowAllJobs);
+
 
         LoadCity = new JButton();
-        LoadCity.setBounds(50, 240, 70,40);
+        LoadCity.setBounds(50, 310, 70,40);
         LoadCity.setText("LoadCity");
         frame.add(LoadCity);
 
         SaveCity = new JButton();
-        SaveCity.setBounds(50,280, 70,40);
+        SaveCity.setBounds(50,350, 70,40);
         SaveCity.setText("SaveCity");
         frame.add(SaveCity);
 
         AddCity = new JButton();
-        AddCity.setBounds(50, 320, 70,40);
+        AddCity.setBounds(50, 390, 70,40);
         AddCity.setText("AddCity");
         frame.add(AddCity);
+
+        ShowAllCities = new JButton();
+        ShowAllCities.setBounds(50, 430, 70,40);
+        ShowAllCities.setText("ShowAllJobs");
+        frame.add(ShowAllCities);
+
+
 
 
 
