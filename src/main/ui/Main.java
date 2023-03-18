@@ -1,6 +1,7 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.desktop.QuitEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -96,10 +97,9 @@ public class Main extends JFrame implements ActionListener {
         }
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()== Quit) {
-            System.out.println("YOOO");
-        }
+
     }
 }
