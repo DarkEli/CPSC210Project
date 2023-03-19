@@ -20,24 +20,24 @@ import static model.JobOffer.calculateTotalSalary;
 
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
-    private JobOfferList jobOfferList;
-    private Scanner input;
+    private static JobOfferList jobOfferList;
+    private static Scanner input;
     private City city;
-    private CityList cityList;
-    String companyName;
-    String jobPosition;
-    String jobLocation;
-    double annualSalary;
-    double signingBonus;
-    int stockAmount;
-    double stockPriceCurrent;
-    String cityName;
-    String countryName;
-    double livingExpenses;
-    private JsonWriterCityList jsonWriterCityList;
-    private JsonReaderCityList jsonReaderCityList;
-    private JsonWriterJobOfferList jsonWriter1;
-    private JsonReaderJobOfferList jsonReader1;
+    private static CityList cityList;
+    static String companyName;
+    static String jobPosition;
+    static String jobLocation;
+    static double annualSalary;
+    static double signingBonus;
+    static int stockAmount;
+    static double stockPriceCurrent;
+    static String cityName;
+    static String countryName;
+    static double livingExpenses;
+    private static JsonWriterCityList jsonWriterCityList;
+    private static JsonReaderCityList jsonReaderCityList;
+    private static JsonWriterJobOfferList jsonWriter1;
+    private static JsonReaderJobOfferList jsonReader1;
     private static final String JSON_STORE1 = "./data/normalCityList.json";
     private static final String JSON_STORE2 = "./data/normalJobOfferList.json";
 
@@ -138,7 +138,7 @@ public class JobOfferComparatorApp {
 
     // MODIFIES: JobOfferList
     // EFFECTS: Construct a Job Offer, adds that Job Offer to the JobOfferList
-    private void addJobOffer() {
+    public static void addJobOffer() {
 
         System.out.print("Add Job Offer");
 
@@ -177,7 +177,7 @@ public class JobOfferComparatorApp {
 
     // MODIFIES: JobOfferList
     // EFFECTS: Construct a Job Offer, then removes that Job Offer from the JobOfferList
-    private void removeJobOffer() {
+    public static void removeJobOffer() {
 
         System.out.println("Remove Job Offer");
         System.out.println("Please input which job offer you would like to remove");
@@ -259,7 +259,7 @@ public class JobOfferComparatorApp {
 
     //MODIFIES: CityList
     //EFFECTS: add the City from the list
-    private void addCityInfo() {
+    public static void addCityInfo() {
 
         System.out.println("Add city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
@@ -283,7 +283,7 @@ public class JobOfferComparatorApp {
 
     //MODIFIES: CityList
     //EFFECTS: remove the City from the list
-    private void removeCityInfo() {
+    public static void removeCityInfo() {
 
         System.out.println("Add city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
@@ -306,19 +306,19 @@ public class JobOfferComparatorApp {
     }
 
     //EFFECTS: Show the company name, job position and job location of the job offer
-    private void showJobOfferList() {
+    public static void showJobOfferList() {
         System.out.println(jobOfferList.showJobOfferCompanyAndPosition());
         System.out.println("All Job Offers have been listed");
     }
 
     //EFFECTS: Show the name of the cities in the cityList
-    private void showCityList() {
+    public static void showCityList() {
         System.out.println(cityList.showCityName());
         System.out.println("All city names have been listed");
     }
 
     // EFFECTS: saves CityList to file
-    private void saveCityList() {
+    public static void saveCityList() {
         try {
             jsonWriterCityList.open();
             jsonWriterCityList.writeCityList(cityList);
@@ -331,7 +331,7 @@ public class JobOfferComparatorApp {
 
 
     // EFFECTS: loads CityList from file
-    private void loadCityList() {
+    public static void loadCityList() {
         try {
             cityList = jsonReaderCityList.readCityList();
             System.out.println("Loaded city list from " + JSON_STORE1);
@@ -341,7 +341,7 @@ public class JobOfferComparatorApp {
     }
 
     // EFFECTS: saves JobOfferList from file
-    private void saveJobOfferList() {
+    public static void saveJobOfferList() {
         try {
             jsonWriter1.open();
             jsonWriter1.writeJobOfferList(jobOfferList);
@@ -354,7 +354,7 @@ public class JobOfferComparatorApp {
 
 
     // EFFECTS: loads JobOfferList from file
-    private void loadJobOfferList() {
+    public static void loadJobOfferList() {
         try {
             jobOfferList = jsonReader1.readJobOfferList();
             System.out.println("Loaded job offer list from " + JSON_STORE2);

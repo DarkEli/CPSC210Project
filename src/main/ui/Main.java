@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
+import static ui.JobOfferComparatorApp.*;
+
 //For the Main class, I (Elliott Au) took reference of the TellerApp project and the JSON Workroom sample project
 // did some modifications by myself
 //Link of the TellerApp project: https://github.students.cs.ubc.ca/CPSC210/TellerApp
@@ -44,56 +46,114 @@ public abstract class Main extends JFrame implements ActionListener {
         LoadJob.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Loading Jobs");
+                loadJobOfferList();
             }
         });
+
 
         SaveJob = new JButton();
         SaveJob.setBounds(50, 160, 100,40);
         SaveJob.setText("SaveJob");
         frame.add(SaveJob);
+        SaveJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveJobOfferList();
+            }
+        });
+
 
         AddJob = new JButton();
         AddJob.setBounds(50,200,100,40);
         AddJob.setText("AddJob");
         frame.add(AddJob);
+        AddJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addJobOffer();
+            }
+        });
+
 
         RemoveJob = new JButton();
         RemoveJob.setBounds(50,240,100,40);
         RemoveJob.setText("RemoveJob");
         frame.add(RemoveJob);
+        RemoveJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeJobOffer();
+            }
+        });
+
 
         ShowAllJobs = new JButton();
         ShowAllJobs.setBounds(50, 280, 100,40);
         ShowAllJobs.setText("ShowAllJobs");
         frame.add(ShowAllJobs);
+        ShowAllJobs.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showJobOfferList();
+            }
+        });
 
 
         LoadCity = new JButton();
         LoadCity.setBounds(50, 350, 100,40);
         LoadCity.setText("LoadCity");
         frame.add(LoadCity);
+        LoadCity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadCityList();
+            }
+        });
 
         SaveCity = new JButton();
         SaveCity.setBounds(50,390, 100,40);
         SaveCity.setText("SaveCity");
         frame.add(SaveCity);
+        SaveCity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveCityList();
+            }
+        });
 
         AddCity = new JButton();
         AddCity.setBounds(50, 430, 100,40);
         AddCity.setText("AddCity");
         frame.add(AddCity);
+        AddCity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addCityInfo();
+            }
+        });
+
 
         RemoveCity = new JButton();
         RemoveCity.setBounds(50,470,100,40);
         RemoveCity.setText("RemoveCity");
         frame.add(RemoveCity);
+        RemoveCity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeCityInfo();
+            }
+        });
 
         ShowAllCities = new JButton();
         ShowAllCities.setBounds(50, 510, 100,40);
         ShowAllCities.setText("ShowAllCities");
         frame.add(ShowAllCities);
-
+        ShowAllCities.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showCityList();
+            }
+        });
 
 
         try {
