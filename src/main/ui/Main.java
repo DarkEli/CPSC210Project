@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 // did some modifications by myself
 //Link of the TellerApp project: https://github.students.cs.ubc.ca/CPSC210/TellerApp
 //Link of the Workroom project: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
-public class Main extends JFrame implements ActionListener {
+public abstract class Main extends JFrame implements ActionListener {
 
     static JButton Quit;
     static JButton SaveCity;
@@ -41,6 +41,12 @@ public class Main extends JFrame implements ActionListener {
         LoadJob.setBounds(50, 120, 100,40);
         LoadJob.setText("LoadJob");
         frame.add(LoadJob);
+        LoadJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Loading Jobs");
+            }
+        });
 
         SaveJob = new JButton();
         SaveJob.setBounds(50, 160, 100,40);
@@ -98,8 +104,5 @@ public class Main extends JFrame implements ActionListener {
     }
 
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
 }
