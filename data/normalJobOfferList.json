@@ -1,20 +1,9 @@
-{"jobOfferList": [
-    {
-        "stockAmount": 1000,
-        "annualSalary": 1000,
-        "jobLocation": "New York City",
-        "companyName": "Apple",
-        "stockPriceCurrent": 1000,
-        "signingBonus": 1000,
-        "jobPosition": "Product Manager"
-    },
-    {
-        "stockAmount": 1000,
-        "annualSalary": 1000,
-        "jobLocation": "Mountainview ",
-        "companyName": "Google",
-        "stockPriceCurrent": 100,
-        "signingBonus": 1000,
-        "jobPosition": "Software Developer"
-    }
-]}
+{"jobOfferList": [{
+    "stockAmount": 100,
+    "annualSalary": 1000,
+    "jobLocation": "New York City",
+    "companyName": "Google",
+    "stockPriceCurrent": 100,
+    "signingBonus": 1000,
+    "jobPosition": "Product Manager"
+}]}

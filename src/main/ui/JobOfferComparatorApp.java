@@ -7,6 +7,7 @@ import persistence.JsonReaderJobOfferList;
 import persistence.JsonWriterCityList;
 import persistence.JsonWriterJobOfferList;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -141,29 +142,35 @@ public class JobOfferComparatorApp {
     public static void addJobOffer() {
 
         System.out.print("Add Job Offer");
+        JOptionPane.showMessageDialog(null, "Add Job Offer");
 
         System.out.println("Input your job offer");
+        JOptionPane.showMessageDialog(null, "Enter your job offer");
 
         System.out.println("Please input the Company name");
-        companyName = input.next();
+        companyName = JOptionPane.showInputDialog(null, "Enter Company's name: ");
 
         System.out.println("Please input the job position");
-        jobPosition = input.next();
+        jobPosition = JOptionPane.showInputDialog(null, "Enter job position: ");
 
         System.out.println("Please input the job location");
-        jobLocation = input.next();
+        jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = input.nextDouble();
+        annualSalary = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = input.nextDouble();
+        signingBonus = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = input.nextInt();
+        stockAmount = Integer.parseInt
+                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = input.nextDouble();
+        stockPriceCurrent = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
@@ -171,7 +178,8 @@ public class JobOfferComparatorApp {
         jobOfferList.addJobOffer(jobOffer);
 
         System.out.println("The Job Offer has been added to the list successfully!");
-
+        JOptionPane.showMessageDialog
+                (null,"The Job Offer has been added to the list successfully!");
     }
 
 
@@ -285,7 +293,7 @@ public class JobOfferComparatorApp {
     //EFFECTS: remove the City from the list
     public static void removeCityInfo() {
 
-        System.out.println("Add city information: City Name, Country Name, "
+        System.out.println("Remove city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
