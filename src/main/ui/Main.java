@@ -1,6 +1,10 @@
 package ui;
 
+import model.JobOffer;
+import model.JobOfferList;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.desktop.QuitEvent;
 import java.awt.event.ActionEvent;
@@ -29,19 +33,21 @@ public abstract class Main extends JFrame implements ActionListener {
     static JButton RemoveCity;
     static JButton ShowBestJob;
     static JButton CalTotalSal;
+    static DefaultTableModel tableModel1;
+    static JTable table1;
 
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("YourJobComparator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800,600);
+        frame.setSize(800, 600);
         frame.setLayout(null);
         frame.setVisible(true);
 
 
         //Source of ActionListener code: https://www.youtube.com/watch?v=ZD6626aW54M&ab_channel=JalalAhmad
         Quit = new JButton();
-        Quit.setBounds(50, 50, 100,40);
+        Quit.setBounds(50, 50, 100, 40);
         Quit.setText("Quit");
         frame.add(Quit);
         Quit.addActionListener(new ActionListener() {
@@ -53,7 +59,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
         LoadJob = new JButton();
-        LoadJob.setBounds(50, 120, 100,40);
+        LoadJob.setBounds(50, 120, 100, 40);
         LoadJob.setText("LoadJob");
         frame.add(LoadJob);
         LoadJob.addActionListener(new ActionListener() {
@@ -65,7 +71,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         SaveJob = new JButton();
-        SaveJob.setBounds(50, 160, 100,40);
+        SaveJob.setBounds(50, 160, 100, 40);
         SaveJob.setText("SaveJob");
         frame.add(SaveJob);
         SaveJob.addActionListener(new ActionListener() {
@@ -77,7 +83,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         AddJob = new JButton();
-        AddJob.setBounds(50,200,100,40);
+        AddJob.setBounds(50, 200, 100, 40);
         AddJob.setText("AddJob");
         frame.add(AddJob);
         AddJob.addActionListener(new ActionListener() {
@@ -89,7 +95,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         RemoveJob = new JButton();
-        RemoveJob.setBounds(50,240,100,40);
+        RemoveJob.setBounds(50, 240, 100, 40);
         RemoveJob.setText("RemoveJob");
         frame.add(RemoveJob);
         RemoveJob.addActionListener(new ActionListener() {
@@ -101,7 +107,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         ShowAllJobs = new JButton();
-        ShowAllJobs.setBounds(50, 280, 100,40);
+        ShowAllJobs.setBounds(50, 280, 100, 40);
         ShowAllJobs.setText("ShowAllJobs");
         frame.add(ShowAllJobs);
         ShowAllJobs.addActionListener(new ActionListener() {
@@ -113,7 +119,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         LoadCity = new JButton();
-        LoadCity.setBounds(50, 350, 100,40);
+        LoadCity.setBounds(50, 350, 100, 40);
         LoadCity.setText("LoadCity");
         frame.add(LoadCity);
         LoadCity.addActionListener(new ActionListener() {
@@ -124,7 +130,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
         SaveCity = new JButton();
-        SaveCity.setBounds(50,390, 100,40);
+        SaveCity.setBounds(50, 390, 100, 40);
         SaveCity.setText("SaveCity");
         frame.add(SaveCity);
         SaveCity.addActionListener(new ActionListener() {
@@ -135,7 +141,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
         AddCity = new JButton();
-        AddCity.setBounds(50, 430, 100,40);
+        AddCity.setBounds(50, 430, 100, 40);
         AddCity.setText("AddCity");
         frame.add(AddCity);
         AddCity.addActionListener(new ActionListener() {
@@ -147,7 +153,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
 
         RemoveCity = new JButton();
-        RemoveCity.setBounds(50,470,100,40);
+        RemoveCity.setBounds(50, 470, 100, 40);
         RemoveCity.setText("RemoveCity");
         frame.add(RemoveCity);
         RemoveCity.addActionListener(new ActionListener() {
@@ -158,7 +164,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
         ShowAllCities = new JButton();
-        ShowAllCities.setBounds(50, 510, 100,40);
+        ShowAllCities.setBounds(50, 510, 100, 40);
         ShowAllCities.setText("ShowAllCities");
         frame.add(ShowAllCities);
         ShowAllCities.addActionListener(new ActionListener() {
@@ -180,7 +186,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
         CalTotalSal = new JButton();
-        CalTotalSal.setBounds(200, 280, 250,40);
+        CalTotalSal.setBounds(200, 280, 250, 40);
         CalTotalSal.setText("JobOfferTotalSalaryCalculation");
         frame.add(CalTotalSal);
         CalTotalSal.addActionListener(new ActionListener() {
@@ -189,6 +195,28 @@ public abstract class Main extends JFrame implements ActionListener {
                 calTotalSalaryConsole();
             }
         });
+
+
+        DefaultTableModel JobOfferDefaultTable = new DefaultTableModel();
+        JTable JobOfferTable = new JTable(JobOfferDefaultTable);
+
+
+        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++) {
+            String CompanyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
+            String JobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
+            String JobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
+            double AnnualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
+            double SigningBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
+            int StockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
+            double StockPrice = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
+
+            Object[] data = {CompanyName, JobPosition, JobLocation, AnnualSalary, SigningBonus, StockAmount,
+                    StockPrice};
+
+            JobOfferDefaultTable.addRow(data);
+
+        }
+
 
 
         try {

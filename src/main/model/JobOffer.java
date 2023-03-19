@@ -62,7 +62,7 @@ public class JobOffer implements WritableObject {
 
 
     //EFFECTS: return the stock amount that the Job Offer provides
-    public double getStockAmount() {
+    public int getStockAmount() {
         return stockAmount;
     }
 

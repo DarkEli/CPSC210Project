@@ -22,7 +22,7 @@ import static model.JobOffer.calculateTotalSalary;
 
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
-    private static JobOfferList jobOfferList;
+    public static JobOfferList jobOfferList;
     private static Scanner input;
     private City city;
     private static CityList cityList;

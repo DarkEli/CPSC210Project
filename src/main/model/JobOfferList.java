@@ -13,7 +13,7 @@ import static model.JobOffer.calculateTotalSalary;
 
 public class JobOfferList implements WritableObject {
 
-    ArrayList<JobOffer> jobOfferList;
+    static ArrayList<JobOffer> jobOfferList;
 
     //EFFECTS: Construct a list for saving the JobOffer
     public JobOfferList() {
