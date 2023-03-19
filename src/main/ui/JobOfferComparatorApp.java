@@ -8,6 +8,7 @@ import persistence.JsonWriterCityList;
 import persistence.JsonWriterJobOfferList;
 
 import javax.swing.*;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -55,7 +56,7 @@ public class JobOfferComparatorApp {
 
     // MODIFIES: this
     // EFFECTS: processes user input
-    private void runComparator() {
+    public static void runComparator() {
         boolean keepGoing = true;
         String command = null;
 
@@ -79,7 +80,7 @@ public class JobOfferComparatorApp {
     @SuppressWarnings("methodlength")
     // MODIFIES: this
     // EFFECTS: processes user command
-    private void processCommand(String command) {
+    private static void processCommand(String command) {
         if (command.equals("1")) {
             addJobOffer();
         } else if (command.equals("2")) {
@@ -111,7 +112,7 @@ public class JobOfferComparatorApp {
 
     // MODIFIES: this
     // EFFECTS: initializes accounts
-    private void init() {
+    private static void init() {
         jobOfferList = new JobOfferList();
         cityList = new CityList();
         input = new Scanner(System.in);
@@ -119,7 +120,7 @@ public class JobOfferComparatorApp {
     }
 
     // EFFECTS: displays menu of options to user
-    private void displayMenu() {
+    private static void displayMenu() {
         System.out.println("\nSelect from:");
         System.out.println("\t1 -> Add Job Offer");
         System.out.println("\t2 -> Remove Job Offer");
@@ -188,30 +189,38 @@ public class JobOfferComparatorApp {
     public static void removeJobOffer() {
 
         System.out.println("Remove Job Offer");
+        JOptionPane.showMessageDialog(null, "Remove Job Offer");
+
         System.out.println("Please input which job offer you would like to remove");
+        JOptionPane.showMessageDialog
+                (null, "Enter the job offer that you would like to remove");
 
         System.out.println("Input your job offer");
 
         System.out.println("Please input the Company name");
-        companyName = input.next();
+        companyName = JOptionPane.showInputDialog(null, "Enter Company's name: ");
 
         System.out.println("Please input the job position");
-        jobPosition = input.next();
+        jobPosition = JOptionPane.showInputDialog(null, "Enter job position: ");
 
         System.out.println("Please input the job location");
-        jobLocation = input.next();
+        jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = input.nextDouble();
+        annualSalary = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = input.nextDouble();
+        signingBonus = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = input.nextInt();
+        stockAmount = Integer.parseInt
+                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = input.nextDouble();
+        stockPriceCurrent = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
@@ -219,42 +228,49 @@ public class JobOfferComparatorApp {
         jobOfferList.removeJobOffer(companyName, jobPosition, jobLocation);
 
         System.out.println("The Job Offer is removed from the list successfully!");
+        JOptionPane.showMessageDialog
+                (null,"The Job Offer is removed from the list successfully!");
 
     }
 
 
     // EFFECTS: find the best Job Offer in the JobOfferList
-    private void findBestJobOffer() {
+    public static void findBestJobOffer() {
         System.out.println("Find the Best Job Offer");
         System.out.println(jobOfferList.maxSalaryJobOffer());
+        JOptionPane.showMessageDialog(null,"The Best Job Offer is shown");
     }
 
 
     //EFFECTS: calculate the total salary of the JobOffer
-    private void calTotalSalaryConsole() {
+    public static void calTotalSalaryConsole() {
         System.out.println("Calculate the total annual salary");
         System.out.println("Input your job offer");
 
         System.out.println("Please input the Company name");
-        companyName = input.next();
+        companyName = JOptionPane.showInputDialog(null, "Enter Company's name: ");
 
         System.out.println("Please input the job position");
-        jobPosition = input.next();
+        jobPosition = JOptionPane.showInputDialog(null, "Enter job position: ");
 
         System.out.println("Please input the job location");
-        jobLocation = input.next();
+        jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = input.nextDouble();
+        annualSalary = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = input.nextDouble();
+        signingBonus = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = input.nextInt();
+        stockAmount = Integer.parseInt
+                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = input.nextDouble();
+        stockPriceCurrent = Double.parseDouble
+                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
@@ -262,6 +278,9 @@ public class JobOfferComparatorApp {
         System.out.println("The total annual salary of being a " + jobOffer.getJobPosition()
                 + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation() + " is "
                 + calculateTotalSalary(jobOffer));
+
+        JOptionPane.showMessageDialog
+                (null, "The total annual salary of the Job Offer is calculated");
 
     }
 
@@ -271,21 +290,26 @@ public class JobOfferComparatorApp {
 
         System.out.println("Add city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
+        JOptionPane.showMessageDialog(null, "Add city information: City Name, Country Name, "
+                + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
-        cityName = input.next();
+        cityName = JOptionPane.showInputDialog(null, "Enter city name: ");
 
         System.out.println("Please input the country (USA or CA)");
-        countryName = input.next();
+        countryName = JOptionPane.showInputDialog(null, "Enter country name: ");
 
         System.out.println("Please input the living expenses with rent per month (for 1 person only)");
-        livingExpenses = input.nextDouble();
+        livingExpenses = Double.parseDouble
+                (JOptionPane.showInputDialog
+                        (null, "Enter living expenses amount per month (including rent)"));
 
         City city = new City(cityName, countryName, livingExpenses);
 
         cityList.addCityToList(city);
 
         System.out.println("The city info is added successfully!");
+        JOptionPane.showMessageDialog(null,"The city info is added successfully!");
 
     }
 
@@ -295,21 +319,26 @@ public class JobOfferComparatorApp {
 
         System.out.println("Remove city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
+        JOptionPane.showMessageDialog(null,"Remove city information: City Name, Country Name, "
+                + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
-        cityName = input.next();
+        cityName = JOptionPane.showInputDialog(null, "Enter city name: ");
 
         System.out.println("Please input the country (USA or CA)");
-        countryName = input.next();
+        countryName = JOptionPane.showInputDialog(null, "Enter country name: ");
 
         System.out.println("Please input the living expenses with rent per month (for 1 person only)");
-        livingExpenses = input.nextDouble();
+        livingExpenses = Double.parseDouble
+                (JOptionPane.showInputDialog
+                        (null, "Enter living expenses amount per month (including rent)"));
 
         City city = new City(cityName, countryName, livingExpenses);
 
         cityList.removeCityToList(cityName, countryName);
 
         System.out.println("The city info is removed successfully!");
+        JOptionPane.showMessageDialog(null,"The city info is removed successfully!");
 
     }
 
@@ -335,6 +364,8 @@ public class JobOfferComparatorApp {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE1);
         }
+
+        JOptionPane.showMessageDialog(null, "City info is saved");
     }
 
 
@@ -358,6 +389,8 @@ public class JobOfferComparatorApp {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE2);
         }
+
+        JOptionPane.showMessageDialog(null, "Job offer is saved");
     }
 
 
@@ -370,7 +403,6 @@ public class JobOfferComparatorApp {
             System.out.println("Unable to read from file: " + JSON_STORE2);
         }
     }
-
 
 }
 

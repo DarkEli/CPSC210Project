@@ -1,9 +1,11 @@
 package ui;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.desktop.QuitEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 
 import static ui.JobOfferComparatorApp.*;
@@ -25,6 +27,8 @@ public abstract class Main extends JFrame implements ActionListener {
     static JButton ShowAllCities;
     static JButton RemoveJob;
     static JButton RemoveCity;
+    static JButton ShowBestJob;
+    static JButton CalTotalSal;
 
     public static void main(String[] args) {
 
@@ -34,10 +38,19 @@ public abstract class Main extends JFrame implements ActionListener {
         frame.setLayout(null);
         frame.setVisible(true);
 
+
+        //Source of ActionListener code: https://www.youtube.com/watch?v=ZD6626aW54M&ab_channel=JalalAhmad
         Quit = new JButton();
         Quit.setBounds(50, 50, 100,40);
         Quit.setText("Quit");
         frame.add(Quit);
+        Quit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                WindowEvent closeWindow = new WindowEvent(frame, WindowEvent.WINDOW_CLOSING);
+                Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+            }
+        });
 
         LoadJob = new JButton();
         LoadJob.setBounds(50, 120, 100,40);
@@ -152,6 +165,28 @@ public abstract class Main extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showCityList();
+            }
+        });
+
+        ShowBestJob = new JButton();
+        ShowBestJob.setBounds(200, 200, 150, 40);
+        ShowBestJob.setText("ShowBestJobOffer");
+        frame.add(ShowBestJob);
+        ShowBestJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                findBestJobOffer();
+            }
+        });
+
+        CalTotalSal = new JButton();
+        CalTotalSal.setBounds(200, 280, 250,40);
+        CalTotalSal.setText("JobOfferTotalSalaryCalculation");
+        frame.add(CalTotalSal);
+        CalTotalSal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calTotalSalaryConsole();
             }
         });
 

@@ -1,7 +1,7 @@
 {"jobOfferList": [{
     "stockAmount": 100,
-    "annualSalary": 1000,
-    "jobLocation": "New York City",
+    "annualSalary": 10000,
+    "jobLocation": "New York",
     "companyName": "Google",
     "stockPriceCurrent": 100,
     "signingBonus": 1000,

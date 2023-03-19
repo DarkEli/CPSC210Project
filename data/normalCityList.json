@@ -1,17 +1,1 @@
-{"cityList": [
-    {
-        "livingExpensesAveragePerMonth": 1000,
-        "cityName": "New York",
-        "countryName": "USA"
-    },
-    {
-        "livingExpensesAveragePerMonth": 1005,
-        "cityName": "Vancouver",
-        "countryName": "CA"
-    },
-    {
-        "livingExpensesAveragePerMonth": 1002,
-        "cityName": "Palo Alto",
-        "countryName": "USA"
-    }
-]}
+{"cityList": []}
