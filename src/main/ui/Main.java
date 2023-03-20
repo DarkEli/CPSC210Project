@@ -6,7 +6,6 @@ import model.JobOfferList;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.desktop.QuitEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -40,7 +39,7 @@ public abstract class Main extends JFrame implements ActionListener {
 
         JFrame frame = new JFrame("YourJobComparator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(1000, 800);
         frame.setLayout(null);
         frame.setVisible(true);
 
@@ -197,26 +196,24 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
 
-        DefaultTableModel JobOfferDefaultTable = new DefaultTableModel();
+        DefaultTableModel JobOfferDefaultTable =
+                new DefaultTableModel
+                        (new Object[]{"Company", "Job Position",
+                                "Job Location", "Annual Salary","Signing Bonus","Stock Amount", "Stock Price"},
+                                0);
         JTable JobOfferTable = new JTable(JobOfferDefaultTable);
+        JScrollPane JobScrollPane = new JScrollPane(JobOfferTable);
+        JobScrollPane.setBounds(500, 50, 800, 400);
+        frame.add(JobScrollPane);
 
-
-        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++) {
-            String CompanyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
-            String JobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
-            String JobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
-            double AnnualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
-            double SigningBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
-            int StockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
-            double StockPrice = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
-
-            Object[] data = {CompanyName, JobPosition, JobLocation, AnnualSalary, SigningBonus, StockAmount,
-                    StockPrice};
-
-            JobOfferDefaultTable.addRow(data);
-
-        }
-
+        DefaultTableModel CityDefaultTable =
+                new DefaultTableModel
+                        (new Object[]{"City", "Country",
+                                "Living Expenses Per Month"},0);
+        JTable CityTable = new JTable(CityDefaultTable);
+        JScrollPane CityScrollPane = new JScrollPane(CityTable);
+        CityScrollPane.setBounds(500, 450, 800, 400);
+        frame.add(CityScrollPane);
 
 
         try {
