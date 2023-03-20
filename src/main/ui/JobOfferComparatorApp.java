@@ -351,6 +351,7 @@ public class JobOfferComparatorApp {
         System.out.println(jobOfferList.showJobOfferCompanyAndPosition());
         System.out.println("All Job Offers have been listed");
 
+        JobOfferDefaultTable.setRowCount(0);
         for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++){
             String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
             String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
@@ -373,6 +374,7 @@ public class JobOfferComparatorApp {
         System.out.println(cityList.showCityName());
         System.out.println("All city names have been listed");
 
+        CityDefaultTable.setRowCount(0);
         for (int i = 0; i < cityList.getCityList().size(); i++){
             String cityName = cityList.getCityList().get(i).getCityName();
             String countryName = cityList.getCityList().get(i).getCountryName();

@@ -13,5 +13,10 @@
         "livingExpensesAveragePerMonth": 1000,
         "cityName": "Vancouver",
         "countryName": "CA"
+    },
+    {
+        "livingExpensesAveragePerMonth": 1300,
+        "cityName": "Toronto",
+        "countryName": "CA"
     }
 ]}
