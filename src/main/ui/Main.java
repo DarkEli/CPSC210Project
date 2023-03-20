@@ -219,23 +219,6 @@ public abstract class Main extends JFrame implements ActionListener {
         frame.add(CityScrollPane);
 
 
-//        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++){
-//            String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
-//            String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
-//            String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
-//            double annualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
-//            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
-//            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
-//            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
-//
-//            Object[] data = {companyName, jobPosition, jobLocation, annualSalary, signingBonus, stockAmount
-//                    , stockPriceCurrent};
-//
-//            JobOfferDefaultTable.addRow(data);
-//
-//        }
-
-
         try {
             new JobOfferComparatorApp();
         } catch (FileNotFoundException e) {
