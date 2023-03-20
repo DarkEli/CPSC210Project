@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CityList implements WritableObject {
 
-    ArrayList<City> cityList;
+    static ArrayList<City> cityList;
 
     public CityList() {
         //EFFECTS: construct a list for saving the City info

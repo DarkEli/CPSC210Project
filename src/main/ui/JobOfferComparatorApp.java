@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static model.JobOffer.calculateTotalSalary;
+import static ui.Main.CityDefaultTable;
+import static ui.Main.JobOfferDefaultTable;
 
 //For this class, I (Elliott Au) took reference of the TellerApp project and the JSON Workroom sample project
 //// did some modifications by myself
@@ -25,7 +27,7 @@ public class JobOfferComparatorApp {
     public static JobOfferList jobOfferList;
     private static Scanner input;
     private City city;
-    private static CityList cityList;
+    public static CityList cityList;
     static String companyName;
     static String jobPosition;
     static String jobLocation;
@@ -238,7 +240,7 @@ public class JobOfferComparatorApp {
     public static void findBestJobOffer() {
         System.out.println("Find the Best Job Offer");
         System.out.println(jobOfferList.maxSalaryJobOffer());
-        JOptionPane.showMessageDialog(null,"The Best Job Offer is shown");
+        JOptionPane.showMessageDialog(null, jobOfferList.maxSalaryJobOffer());
     }
 
 
@@ -280,7 +282,9 @@ public class JobOfferComparatorApp {
                 + calculateTotalSalary(jobOffer));
 
         JOptionPane.showMessageDialog
-                (null, "The total annual salary of the Job Offer is calculated");
+                (null, "The total annual salary of being a " + jobOffer.getJobPosition()
+                        + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation() + " is "
+                        + calculateTotalSalary(jobOffer));
 
     }
 
@@ -346,12 +350,39 @@ public class JobOfferComparatorApp {
     public static void showJobOfferList() {
         System.out.println(jobOfferList.showJobOfferCompanyAndPosition());
         System.out.println("All Job Offers have been listed");
+
+        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++){
+            String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
+            String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
+            String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
+            double annualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
+            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
+            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
+            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
+
+            Object[] data = {companyName, jobPosition, jobLocation, annualSalary, signingBonus, stockAmount
+                    , stockPriceCurrent};
+
+            JobOfferDefaultTable.addRow(data);
+
+        }
     }
 
     //EFFECTS: Show the name of the cities in the cityList
     public static void showCityList() {
         System.out.println(cityList.showCityName());
         System.out.println("All city names have been listed");
+
+        for (int i = 0; i < cityList.getCityList().size(); i++){
+            String cityName = cityList.getCityList().get(i).getCityName();
+            String countryName = cityList.getCityList().get(i).getCountryName();
+            double livingExpensesAveragePerMonth = cityList.getCityList().get(i).getLivingExpenses();
+
+            Object[] data = {cityName, countryName, livingExpensesAveragePerMonth};
+
+            CityDefaultTable.addRow(data);
+
+        }
     }
 
     // EFFECTS: saves CityList to file
@@ -374,6 +405,7 @@ public class JobOfferComparatorApp {
         try {
             cityList = jsonReaderCityList.readCityList();
             System.out.println("Loaded city list from " + JSON_STORE1);
+
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE1);
         }

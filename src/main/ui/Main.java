@@ -34,6 +34,9 @@ public abstract class Main extends JFrame implements ActionListener {
     static JButton CalTotalSal;
     static DefaultTableModel tableModel1;
     static JTable table1;
+    static DefaultTableModel CityDefaultTable;
+    static DefaultTableModel JobOfferDefaultTable;
+
 
     public static void main(String[] args) {
 
@@ -196,8 +199,7 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
 
-        DefaultTableModel JobOfferDefaultTable =
-                new DefaultTableModel
+        JobOfferDefaultTable = new DefaultTableModel
                         (new Object[]{"Company", "Job Position",
                                 "Job Location", "Annual Salary","Signing Bonus","Stock Amount", "Stock Price"},
                                 0);
@@ -206,14 +208,32 @@ public abstract class Main extends JFrame implements ActionListener {
         JobScrollPane.setBounds(500, 50, 800, 400);
         frame.add(JobScrollPane);
 
-        DefaultTableModel CityDefaultTable =
-                new DefaultTableModel
-                        (new Object[]{"City", "Country",
+        CityDefaultTable = new DefaultTableModel
+                (new Object[]{"City", "Country",
                                 "Living Expenses Per Month"},0);
+
+
         JTable CityTable = new JTable(CityDefaultTable);
         JScrollPane CityScrollPane = new JScrollPane(CityTable);
         CityScrollPane.setBounds(500, 450, 800, 400);
         frame.add(CityScrollPane);
+
+
+//        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++){
+//            String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
+//            String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
+//            String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
+//            double annualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
+//            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
+//            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
+//            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
+//
+//            Object[] data = {companyName, jobPosition, jobLocation, annualSalary, signingBonus, stockAmount
+//                    , stockPriceCurrent};
+//
+//            JobOfferDefaultTable.addRow(data);
+//
+//        }
 
 
         try {
@@ -222,7 +242,6 @@ public abstract class Main extends JFrame implements ActionListener {
             System.out.println("Unable to run application: file not found");
         }
     }
-
 
 
 }
