@@ -38,6 +38,7 @@ public abstract class Main extends JFrame implements ActionListener {
     static DefaultTableModel JobOfferDefaultTable;
 
 
+    @SuppressWarnings("methodlength")
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("YourJobComparator");
@@ -199,24 +200,22 @@ public abstract class Main extends JFrame implements ActionListener {
         });
 
 
-        JobOfferDefaultTable = new DefaultTableModel
-                        (new Object[]{"Company", "Job Position",
-                                "Job Location", "Annual Salary","Signing Bonus","Stock Amount", "Stock Price"},
-                                0);
-        JTable JobOfferTable = new JTable(JobOfferDefaultTable);
-        JScrollPane JobScrollPane = new JScrollPane(JobOfferTable);
-        JobScrollPane.setBounds(500, 50, 800, 400);
-        frame.add(JobScrollPane);
+        JobOfferDefaultTable = new DefaultTableModel(new Object[]{"Company", "Job Position",
+                "Job Location", "Annual Salary", "Signing Bonus", "Stock Amount", "Stock Price"},
+                        0);
+        JTable jobOfferTable = new JTable(JobOfferDefaultTable);
+        JScrollPane jobScrollPane = new JScrollPane(jobOfferTable);
+        jobScrollPane.setBounds(500, 50, 800, 400);
+        frame.add(jobScrollPane);
 
-        CityDefaultTable = new DefaultTableModel
-                (new Object[]{"City", "Country",
-                                "Living Expenses Per Month"},0);
+        CityDefaultTable = new DefaultTableModel(new Object[]{"City", "Country",
+                "Living Expenses Per Month"}, 0);
 
 
-        JTable CityTable = new JTable(CityDefaultTable);
-        JScrollPane CityScrollPane = new JScrollPane(CityTable);
-        CityScrollPane.setBounds(500, 450, 800, 400);
-        frame.add(CityScrollPane);
+        JTable cityTable = new JTable(CityDefaultTable);
+        JScrollPane cityScrollPane = new JScrollPane(cityTable);
+        cityScrollPane.setBounds(500, 450, 800, 400);
+        frame.add(cityScrollPane);
 
 
         try {

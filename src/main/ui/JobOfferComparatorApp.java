@@ -24,10 +24,10 @@ import static ui.Main.JobOfferDefaultTable;
 
 public class JobOfferComparatorApp {
     private JobOffer jobOffer;
-    public static JobOfferList jobOfferList;
+    private static JobOfferList jobOfferList;
     private static Scanner input;
     private City city;
-    public static CityList cityList;
+    private static CityList cityList;
     static String companyName;
     static String jobPosition;
     static String jobLocation;
@@ -140,6 +140,7 @@ public class JobOfferComparatorApp {
 
     }
 
+    @SuppressWarnings("methodlength")
     // MODIFIES: JobOfferList
     // EFFECTS: Construct a Job Offer, adds that Job Offer to the JobOfferList
     public static void addJobOffer() {
@@ -160,20 +161,18 @@ public class JobOfferComparatorApp {
         jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
+        annualSalary = Double.parseDouble(JOptionPane.showInputDialog(null,
+                "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
+        signingBonus = Double.parseDouble(JOptionPane.showInputDialog(null,
+                "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = Integer.parseInt
-                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
+        stockAmount = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
+        stockPriceCurrent = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
@@ -181,11 +180,12 @@ public class JobOfferComparatorApp {
         jobOfferList.addJobOffer(jobOffer);
 
         System.out.println("The Job Offer has been added to the list successfully!");
-        JOptionPane.showMessageDialog
-                (null,"The Job Offer has been added to the list successfully!");
+        JOptionPane.showMessageDialog(null,
+                "The Job Offer has been added to the list successfully!");
     }
 
 
+    @SuppressWarnings("methodlength")
     // MODIFIES: JobOfferList
     // EFFECTS: Construct a Job Offer, then removes that Job Offer from the JobOfferList
     public static void removeJobOffer() {
@@ -194,8 +194,7 @@ public class JobOfferComparatorApp {
         JOptionPane.showMessageDialog(null, "Remove Job Offer");
 
         System.out.println("Please input which job offer you would like to remove");
-        JOptionPane.showMessageDialog
-                (null, "Enter the job offer that you would like to remove");
+        JOptionPane.showMessageDialog(null, "Enter the job offer that you would like to remove");
 
         System.out.println("Input your job offer");
 
@@ -209,20 +208,16 @@ public class JobOfferComparatorApp {
         jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
+        annualSalary = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
+        signingBonus = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = Integer.parseInt
-                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
+        stockAmount = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
+        stockPriceCurrent = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
@@ -230,8 +225,7 @@ public class JobOfferComparatorApp {
         jobOfferList.removeJobOffer(companyName, jobPosition, jobLocation);
 
         System.out.println("The Job Offer is removed from the list successfully!");
-        JOptionPane.showMessageDialog
-                (null,"The Job Offer is removed from the list successfully!");
+        JOptionPane.showMessageDialog(null, "The Job Offer is removed from the list successfully!");
 
     }
 
@@ -244,6 +238,7 @@ public class JobOfferComparatorApp {
     }
 
 
+    @SuppressWarnings("methodlength")
     //EFFECTS: calculate the total salary of the JobOffer
     public static void calTotalSalaryConsole() {
         System.out.println("Calculate the total annual salary");
@@ -259,32 +254,28 @@ public class JobOfferComparatorApp {
         jobLocation = JOptionPane.showInputDialog(null, "Enter job location: ");
 
         System.out.println("Please input your annual salary");
-        annualSalary = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter annual salary: "));
+        annualSalary = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter annual salary: "));
 
         System.out.println("Please input your signing bonus");
-        signingBonus = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter signing bonus: "));
+        signingBonus = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter signing bonus: "));
 
         System.out.println("Please input the amount of stocks provided");
-        stockAmount = Integer.parseInt
-                (JOptionPane.showInputDialog(null, "Enter stock amount: "));
+        stockAmount = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter stock amount: "));
 
         System.out.println("Please input the current stock price");
-        stockPriceCurrent = Double.parseDouble
-                (JOptionPane.showInputDialog(null, "Enter current stock price: "));
+        stockPriceCurrent = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter current stock price: "));
 
         JobOffer jobOffer = new JobOffer(companyName, jobPosition, jobLocation,
                 annualSalary, signingBonus, stockAmount, stockPriceCurrent);
 
-        System.out.println("The total annual salary of being a " + jobOffer.getJobPosition()
-                + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation() + " is "
-                + calculateTotalSalary(jobOffer));
+        System.out.println("The total annual salary of being a "
+                + jobOffer.getJobPosition() + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation()
+                + " is " + calculateTotalSalary(jobOffer));
 
-        JOptionPane.showMessageDialog
-                (null, "The total annual salary of being a " + jobOffer.getJobPosition()
-                        + " at " + jobOffer.getCompanyName() + " in " + jobOffer.getJobLocation() + " is "
-                        + calculateTotalSalary(jobOffer));
+        JOptionPane.showMessageDialog(null,
+                "The total annual salary of being a "
+                        + jobOffer.getJobPosition() + " at " + jobOffer.getCompanyName()
+                        + " in " + jobOffer.getJobLocation() + " is " + calculateTotalSalary(jobOffer));
 
     }
 
@@ -294,8 +285,9 @@ public class JobOfferComparatorApp {
 
         System.out.println("Add city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
-        JOptionPane.showMessageDialog(null, "Add city information: City Name, Country Name, "
-                + "Living Expenses with rent per month (for 1 person only)");
+        JOptionPane.showMessageDialog(null,
+                "Add city information: City Name, Country Name, "
+                        + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
         cityName = JOptionPane.showInputDialog(null, "Enter city name: ");
@@ -304,16 +296,15 @@ public class JobOfferComparatorApp {
         countryName = JOptionPane.showInputDialog(null, "Enter country name: ");
 
         System.out.println("Please input the living expenses with rent per month (for 1 person only)");
-        livingExpenses = Double.parseDouble
-                (JOptionPane.showInputDialog
-                        (null, "Enter living expenses amount per month (including rent)"));
+        livingExpenses = Double.parseDouble(JOptionPane.showInputDialog(null,
+                "Enter living expenses amount per month (including rent)"));
 
         City city = new City(cityName, countryName, livingExpenses);
 
         cityList.addCityToList(city);
 
         System.out.println("The city info is added successfully!");
-        JOptionPane.showMessageDialog(null,"The city info is added successfully!");
+        JOptionPane.showMessageDialog(null, "The city info is added successfully!");
 
     }
 
@@ -323,8 +314,9 @@ public class JobOfferComparatorApp {
 
         System.out.println("Remove city information: City Name, Country Name, "
                 + "Living Expenses with rent per month (for 1 person only)");
-        JOptionPane.showMessageDialog(null,"Remove city information: City Name, Country Name, "
-                + "Living Expenses with rent per month (for 1 person only)");
+        JOptionPane.showMessageDialog(null,
+                "Remove city information: City Name, Country Name, "
+                        + "Living Expenses with rent per month (for 1 person only)");
 
         System.out.println("Please input the name of the City");
         cityName = JOptionPane.showInputDialog(null, "Enter city name: ");
@@ -333,16 +325,15 @@ public class JobOfferComparatorApp {
         countryName = JOptionPane.showInputDialog(null, "Enter country name: ");
 
         System.out.println("Please input the living expenses with rent per month (for 1 person only)");
-        livingExpenses = Double.parseDouble
-                (JOptionPane.showInputDialog
-                        (null, "Enter living expenses amount per month (including rent)"));
+        livingExpenses = Double.parseDouble(JOptionPane.showInputDialog(null,
+                "Enter living expenses amount per month (including rent)"));
 
         City city = new City(cityName, countryName, livingExpenses);
 
         cityList.removeCityToList(cityName, countryName);
 
         System.out.println("The city info is removed successfully!");
-        JOptionPane.showMessageDialog(null,"The city info is removed successfully!");
+        JOptionPane.showMessageDialog(null, "The city info is removed successfully!");
 
     }
 
@@ -352,7 +343,7 @@ public class JobOfferComparatorApp {
         System.out.println("All Job Offers have been listed");
 
         JobOfferDefaultTable.setRowCount(0);
-        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++){
+        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++) {
             String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
             String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
             String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
@@ -361,8 +352,8 @@ public class JobOfferComparatorApp {
             int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
             double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
 
-            Object[] data = {companyName, jobPosition, jobLocation, annualSalary, signingBonus, stockAmount
-                    , stockPriceCurrent};
+            Object[] data = {companyName, jobPosition, jobLocation,
+                    annualSalary, signingBonus, stockAmount, stockPriceCurrent};
 
             JobOfferDefaultTable.addRow(data);
 
@@ -375,7 +366,7 @@ public class JobOfferComparatorApp {
         System.out.println("All city names have been listed");
 
         CityDefaultTable.setRowCount(0);
-        for (int i = 0; i < cityList.getCityList().size(); i++){
+        for (int i = 0; i < cityList.getCityList().size(); i++) {
             String cityName = cityList.getCityList().get(i).getCityName();
             String countryName = cityList.getCityList().get(i).getCountryName();
             double livingExpensesAveragePerMonth = cityList.getCityList().get(i).getLivingExpenses();

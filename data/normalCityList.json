@@ -18,5 +18,15 @@
         "livingExpensesAveragePerMonth": 1300,
         "cityName": "Toronto",
         "countryName": "CA"
+    },
+    {
+        "livingExpensesAveragePerMonth": 1000,
+        "cityName": "Waterloo",
+        "countryName": "CA"
+    },
+    {
+        "livingExpensesAveragePerMonth": 700,
+        "cityName": "London",
+        "countryName": "CA"
     }
 ]}
