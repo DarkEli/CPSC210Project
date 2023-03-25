@@ -20,13 +20,13 @@
         "countryName": "CA"
     },
     {
-        "livingExpensesAveragePerMonth": 1000,
-        "cityName": "Waterloo",
+        "livingExpensesAveragePerMonth": 700,
+        "cityName": "London",
         "countryName": "CA"
     },
     {
-        "livingExpensesAveragePerMonth": 700,
-        "cityName": "London",
+        "livingExpensesAveragePerMonth": 500,
+        "cityName": "Ottawa",
         "countryName": "CA"
     }
 ]}
