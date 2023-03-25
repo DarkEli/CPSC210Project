@@ -220,18 +220,18 @@ public abstract class Main extends JFrame implements ActionListener {
         //Source: https://stackoverflow.com/questions/1466240/how-to-set-an-image-as-a-background-for-frame-in-swing-gui-of-java/1466278#1466278
         ImageIcon background = new ImageIcon("/Applications/project_b1w6b/data/960x0.jpg");
         Image img = background.getImage();
-        Image temp=img.getScaledInstance(500,600,Image.SCALE_SMOOTH);
-        background=new ImageIcon(temp);
+        Image temp = img.getScaledInstance(500,600,Image.SCALE_SMOOTH);
+        background = new ImageIcon(temp);
         JLabel back = new JLabel(background);
         back.setLayout(null);
         back.setBounds(0,100,500,1000);
         frame.add(back);
 
-        ImageIcon background1 = new ImageIcon("/Applications/" +
-                "project_b1w6b/data/800px-Gregor_Kiczales_AOSD.jpg");
+        ImageIcon background1 = new ImageIcon("/Applications/"
+                + "project_b1w6b/data/800px-Gregor_Kiczales_AOSD.jpg");
         Image img1 = background1.getImage();
-        Image temp1 =img1.getScaledInstance(300,200,Image.SCALE_SMOOTH);
-        background1 =new ImageIcon(temp1);
+        Image temp1 = img1.getScaledInstance(300,200,Image.SCALE_SMOOTH);
+        background1 = new ImageIcon(temp1);
         JLabel back1 = new JLabel(background1);
         back1.setLayout(null);
         back1.setBounds(0,-10,300,200);
