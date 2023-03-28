@@ -41,6 +41,8 @@ public abstract class Main extends JFrame implements ActionListener {
     @SuppressWarnings("methodlength")
     public static void main(String[] args) {
 
+
+        //Create the frame for the GUI
         JFrame frame = new JFrame("YourJobComparator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 800);
