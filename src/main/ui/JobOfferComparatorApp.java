@@ -8,7 +8,6 @@ import persistence.JsonWriterCityList;
 import persistence.JsonWriterJobOfferList;
 
 import javax.swing.*;
-import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -182,6 +181,7 @@ public class JobOfferComparatorApp {
         System.out.println("The Job Offer has been added to the list successfully!");
         JOptionPane.showMessageDialog(null,
                 "The Job Offer has been added to the list successfully!");
+
     }
 
 
@@ -226,6 +226,7 @@ public class JobOfferComparatorApp {
 
         System.out.println("The Job Offer is removed from the list successfully!");
         JOptionPane.showMessageDialog(null, "The Job Offer is removed from the list successfully!");
+
 
     }
 
@@ -306,6 +307,7 @@ public class JobOfferComparatorApp {
         System.out.println("The city info is added successfully!");
         JOptionPane.showMessageDialog(null, "The city info is added successfully!");
 
+
     }
 
     //MODIFIES: CityList
@@ -343,14 +345,22 @@ public class JobOfferComparatorApp {
         System.out.println("All Job Offers have been listed");
 
         JobOfferDefaultTable.setRowCount(0);
-        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++) {
-            String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
-            String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
-            String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
-            double annualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
-            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
-            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
-            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
+//        for (int i = 0; i < jobOfferList.getJobOfferList().size(); i++) {
+//            String companyName = jobOfferList.getJobOfferList().get(i).getCompanyName();
+//            String jobPosition = jobOfferList.getJobOfferList().get(i).getJobPosition();
+//            String jobLocation = jobOfferList.getJobOfferList().get(i).getJobLocation();
+//            double annualSalary = jobOfferList.getJobOfferList().get(i).getAnnualSalary();
+//            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
+//            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
+//            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
+            for (JobOffer jobOffer : jobOfferList.getJobOfferList()) {
+                String companyName = jobOffer.getCompanyName();
+                String jobPosition = jobOffer.getJobPosition();
+                String jobLocation = jobOffer.getJobLocation();
+                double annualSalary = jobOffer.getAnnualSalary();
+                double signingBonus = jobOffer.getSigningBonus();
+                int stockAmount = jobOffer.getStockAmount();
+                double stockPriceCurrent = jobOffer.getStockPriceCurrent();
 
             Object[] data = {companyName, jobPosition, jobLocation,
                     annualSalary, signingBonus, stockAmount, stockPriceCurrent};
@@ -358,6 +368,7 @@ public class JobOfferComparatorApp {
             JobOfferDefaultTable.addRow(data);
 
         }
+
     }
 
     //EFFECTS: Show the name of the cities in the cityList
@@ -366,10 +377,14 @@ public class JobOfferComparatorApp {
         System.out.println("All city names have been listed");
 
         CityDefaultTable.setRowCount(0);
-        for (int i = 0; i < cityList.getCityList().size(); i++) {
-            String cityName = cityList.getCityList().get(i).getCityName();
-            String countryName = cityList.getCityList().get(i).getCountryName();
-            double livingExpensesAveragePerMonth = cityList.getCityList().get(i).getLivingExpenses();
+//        for (int i = 0; i < cityList.getCityList().size(); i++) {
+//            String cityName = cityList.getCityList().get(i).getCityName();
+//            String countryName = cityList.getCityList().get(i).getCountryName();
+//            double livingExpensesAveragePerMonth = cityList.getCityList().get(i).getLivingExpenses();
+        for (City c: cityList.getCityList()) {
+            String cityName = c.getCityName();
+            String countryName = c.getCountryName();
+            double livingExpensesAveragePerMonth = c.getLivingExpenses();
 
             Object[] data = {cityName, countryName, livingExpensesAveragePerMonth};
 
@@ -390,6 +405,7 @@ public class JobOfferComparatorApp {
         }
 
         JOptionPane.showMessageDialog(null, "City info is saved");
+
     }
 
 
@@ -415,7 +431,8 @@ public class JobOfferComparatorApp {
             System.out.println("Unable to write to file: " + JSON_STORE2);
         }
 
-        JOptionPane.showMessageDialog(null, "Job offer is saved");
+        JOptionPane.showMessageDialog(null, "Job Offer is saved");
+
     }
 
 
@@ -424,6 +441,7 @@ public class JobOfferComparatorApp {
         try {
             jobOfferList = jsonReader1.readJobOfferList();
             System.out.println("Loaded job offer list from " + JSON_STORE2);
+
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE2);
         }

@@ -25,6 +25,7 @@ public class JobOfferList implements WritableObject {
     //MODIFIES: this
     //EFFECTS: add the JobOffer to the list
     public void addJobOffer(JobOffer jo) {
+
         jobOfferList.add(jo);
     }
 
@@ -41,6 +42,7 @@ public class JobOfferList implements WritableObject {
                 break;
             }
         }
+        EventLog.getInstance().logEvent(new Event("Remove Job Offer."));
     }
 
     //EFFECTS: Identifies the JobOffer with max (total) salary and return the message
@@ -59,6 +61,8 @@ public class JobOfferList implements WritableObject {
                 jobMaxSalaryJobPosition = jo.getJobPosition();
             }
         }
+        EventLog.getInstance().logEvent(new Event("Job Offer with highest salary is found."));
+
         return "The best job offer is working at " + jobMaxSalaryCompanyName
                 + " as a " + jobMaxSalaryJobPosition + " with " + max + " as annual salary";
     }
@@ -72,6 +76,7 @@ public class JobOfferList implements WritableObject {
             jobOfferInfo += (jobOffer.getCompanyName() + " : " + jobOffer.getJobPosition() + " in "
                     + jobOffer.getJobLocation()) + "\n";
         }
+
         return jobOfferInfo;
     }
 
@@ -98,6 +103,7 @@ public class JobOfferList implements WritableObject {
 
     // EFFECTS: returns an unmodifiable list of JobOffer (returns JobOfferList)
     public List<JobOffer> getJobOfferList() {
+        EventLog.getInstance().logEvent(new Event("Get JobOfferList."));
         return Collections.unmodifiableList(jobOfferList);
     }
 }

@@ -1,9 +1,6 @@
 package persistence;
 
-import model.City;
-import model.CityList;
-import model.JobOffer;
-import model.JobOfferList;
+import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -22,7 +22,9 @@ public class CityList implements WritableObject {
     //MODIFIES: this
     //EFFECTS: add the City to the list
     public void addCityToList(City city) {
+
         cityList.add(city);
+        EventLog.getInstance().logEvent(new Event("Add City to the List"));
     }
 
 
@@ -37,6 +39,8 @@ public class CityList implements WritableObject {
                 break;
             }
         }
+
+        EventLog.getInstance().logEvent(new Event("Remove city."));
     }
 
 
@@ -70,7 +74,10 @@ public class CityList implements WritableObject {
     }
 
     public List<City> getCityList() {
+
+        EventLog.getInstance().logEvent(new Event("Get CityList."));
         return Collections.unmodifiableList(cityList);
+
     }
 
 

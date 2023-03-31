@@ -1,5 +1,8 @@
 package ui;
 
+import model.CityList;
+import model.EventLog;
+import model.Event;
 import model.JobOffer;
 import model.JobOfferList;
 
@@ -10,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
 
 import static ui.JobOfferComparatorApp.*;
 
@@ -62,6 +66,11 @@ public abstract class Main extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 WindowEvent closeWindow = new WindowEvent(frame, WindowEvent.WINDOW_CLOSING);
                 Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
+
+                for (Iterator<Event> it = EventLog.getInstance().iterator(); it.hasNext(); ) {
+                    Event event = it.next();
+                    System.out.println(event);
+                }
             }
         });
 

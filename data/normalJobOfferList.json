@@ -16,5 +16,14 @@
         "stockPriceCurrent": 300,
         "signingBonus": 10000,
         "jobPosition": "Software Developer"
+    },
+    {
+        "stockAmount": 0,
+        "annualSalary": 15000,
+        "jobLocation": "Houston",
+        "companyName": "SpaceX",
+        "stockPriceCurrent": 0,
+        "signingBonus": 0,
+        "jobPosition": "SWE"
     }
 ]}
