@@ -1,7 +1,5 @@
 package model;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,16 +51,16 @@ public class CityListTest {
         assertEquals("Vancouver", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
 
-        cityList.removeCityToList("Vancouver", "USA");
+        cityList.removeCityFromList("Vancouver", "USA");
         assertEquals(1, cityList.cityList.size());
 
-        cityList.removeCityToList("New York", "USA");
+        cityList.removeCityFromList("New York", "USA");
         assertEquals(1, cityList.cityList.size());
 
-        cityList.removeCityToList("New York", "CA");
+        cityList.removeCityFromList("New York", "CA");
         assertEquals(1, cityList.cityList.size());
 
-        cityList.removeCityToList("Vancouver", "CA");
+        cityList.removeCityFromList("Vancouver", "CA");
         assertEquals(0, cityList.cityList.size());
     }
 
@@ -75,24 +73,24 @@ public class CityListTest {
 
         assertEquals("Vancouver", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
-        cityList.removeCityToList("Vancouver", "CA");
+        cityList.removeCityFromList("Vancouver", "CA");
         assertEquals(2, cityList.cityList.size());
 
-        cityList.removeCityToList("Vancouver", "CA");
+        cityList.removeCityFromList("Vancouver", "CA");
         assertEquals(2, cityList.cityList.size());
 
-        cityList.removeCityToList("New York", "CA");
+        cityList.removeCityFromList("New York", "CA");
         assertEquals(2, cityList.cityList.size());
 
         assertEquals("New York", cityList.cityList.get(1).getCityName());
         assertEquals("USA", cityList.cityList.get(1).getCountryName());
 
-        cityList.removeCityToList("New York", "USA");
+        cityList.removeCityFromList("New York", "USA");
         assertEquals(1, cityList.cityList.size());
 
         assertEquals("Toronto", cityList.cityList.get(0).getCityName());
         assertEquals("CA", cityList.cityList.get(0).getCountryName());
-        cityList.removeCityToList("Toronto", "CA");
+        cityList.removeCityFromList("Toronto", "CA");
         assertEquals(0, cityList.cityList.size());
 
     }

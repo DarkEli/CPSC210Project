@@ -32,7 +32,7 @@ public class CityList implements WritableObject {
     //REQUIRES: String cityName, String countryName
     //MODIFIES: this
     //EFFECTS: remove the City from the list
-    public void removeCityToList(String cityName, String countryName) {
+    public void removeCityFromList(String cityName, String countryName) {
         for (City c: cityList) {
             if (c.getCountryName().equals(countryName) && c.getCityName().equals(cityName)) {
                 cityList.remove(c);

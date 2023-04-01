@@ -3,6 +3,7 @@ package model;
 import org.json.JSONObject;
 import persistence.WritableObject;
 
+
 public class City implements WritableObject {
 
     private String cityName;
@@ -50,3 +51,4 @@ public class City implements WritableObject {
 
 
 }
+

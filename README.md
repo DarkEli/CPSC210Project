@@ -37,3 +37,19 @@ decides to work there. The user is able to compare multiple offers through a bar
 ##Phase 4 task 2
 ![](/Applications/project_b1w6b/data/Screenshot 2023-04-01 at 2.58.50 AM.png)
 
+##Phase 3 task 3
+If I can start the project once again, I would implement override equal and hashcode to ensure that the Objects 
+(JobOffer/ City) are the same. Secondly, I would add try-catch to ensure that all the doubles and integers are in 
+positive value. Thirdly, I would write the code more neatly. Thirdly, I should create an interface class List
+that has addObject/ removeObject and showList methods. The JobOfferList and the CityList should implement the class.
+Fourthly, for the JSONReader and JSONWriter, the methods' names are so similar to each other and sometimes I don't even
+know which JSON methods are working. Renaming some methods definitely improves the readability of codes.
+Lastly, I would try to increase the cohesion of my code and reduce coupling. Definitely, the code can be turned into 
+more clean, tidy and readable. 
+
+
+For the GUI, besides the design of the UI, 
+the chat box that allows users to input the info can be improved. When user clicks the add/ remove JobOffer/ City button 
+by mistake, the user cannot cancel the process and must have input something or just keep clicking the cancel button for
+a few times, which is totally unnecessary and a waste of time. 
+

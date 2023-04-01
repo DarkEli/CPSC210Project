@@ -332,7 +332,7 @@ public class JobOfferComparatorApp {
 
         City city = new City(cityName, countryName, livingExpenses);
 
-        cityList.removeCityToList(cityName, countryName);
+        cityList.removeCityFromList(cityName, countryName);
 
         System.out.println("The city info is removed successfully!");
         JOptionPane.showMessageDialog(null, "The city info is removed successfully!");
