@@ -33,3 +33,7 @@ decides to work there. The user is able to compare multiple offers through a bar
 - As a user, I want to be able to add multiple Cities to a CityList. 
 - As a user, I want to be able to load and save the state of the application
 
+
+##Phase 4 task 2
+![](/Applications/project_b1w6b/data/Screenshot 2023-04-01 at 2.58.50 AM.png)
+
