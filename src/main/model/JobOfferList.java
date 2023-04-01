@@ -27,6 +27,7 @@ public class JobOfferList implements WritableObject {
     public void addJobOffer(JobOffer jo) {
 
         jobOfferList.add(jo);
+        EventLog.getInstance().logEvent(new Event("Add JobOffer to the List"));
     }
 
 
