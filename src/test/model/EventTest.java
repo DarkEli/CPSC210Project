@@ -39,6 +39,7 @@ public class EventTest {
         Event e4 = null;
         EventLog eventLog1 = new EventLog();
 
+        assertTrue(e1.getDate().equals(e2.getDate()));
         assertTrue(e1.equals(e2));
         assertFalse(e1.equals(e3));
         assertFalse(e1.equals(e4));
