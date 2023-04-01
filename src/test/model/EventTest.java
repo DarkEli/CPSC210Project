@@ -36,10 +36,12 @@ public class EventTest {
         Event e1 = new Event("E1");
         Event e2 = new Event("E1");
         Event e3 = new Event("E3");
+        Event e4 = null;
         EventLog eventLog1 = new EventLog();
 
         assertTrue(e1.equals(e2));
         assertFalse(e1.equals(e3));
+        assertFalse(e1.equals(e4));
         assertFalse(e1.equals(eventLog1));
     }
 
