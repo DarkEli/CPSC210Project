@@ -31,11 +31,20 @@ public class EventTest {
 //    }
 
     @Test
-    public void testHashCode() {
+    public void testEqual() {
         Event e1 = new Event("E1");
         Event e2 = new Event("E1");
 
         assertTrue(e1.equals(e2));
+    }
+
+    @Test
+    public void testHashCode() {
+        Event e1 = new Event("E1");
+        Event e2 = new Event("E1");
+
+        assertEquals(e1.hashCode(), e2.hashCode());
+
     }
 
 
