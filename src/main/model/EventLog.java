@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * Represents a log of JobComparator events.
@@ -19,7 +20,7 @@ public class EventLog implements Iterable<Event> {
      * Prevent external construction.
      * (Singleton Design Pattern).
      */
-    private EventLog() {
+    protected EventLog() {
         events = new ArrayList<Event>();
     }
 
@@ -57,4 +58,5 @@ public class EventLog implements Iterable<Event> {
     public Iterator<Event> iterator() {
         return events.iterator();
     }
+
 }
