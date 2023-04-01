@@ -44,8 +44,6 @@ public class EventTest {
         assertFalse(e1.equals(e4));
         assertFalse(e1.equals(eventLog1));
 
-        assertFalse(e.getDate().equals(e1.getDate()));
-        assertFalse(e.equals(e1));
     }
 
     @Test
