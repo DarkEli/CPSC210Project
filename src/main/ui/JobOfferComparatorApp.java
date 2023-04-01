@@ -353,14 +353,14 @@ public class JobOfferComparatorApp {
 //            double signingBonus = jobOfferList.getJobOfferList().get(i).getSigningBonus();
 //            int stockAmount = jobOfferList.getJobOfferList().get(i).getStockAmount();
 //            double stockPriceCurrent = jobOfferList.getJobOfferList().get(i).getStockPriceCurrent();
-            for (JobOffer jobOffer : jobOfferList.getJobOfferList()) {
-                String companyName = jobOffer.getCompanyName();
-                String jobPosition = jobOffer.getJobPosition();
-                String jobLocation = jobOffer.getJobLocation();
-                double annualSalary = jobOffer.getAnnualSalary();
-                double signingBonus = jobOffer.getSigningBonus();
-                int stockAmount = jobOffer.getStockAmount();
-                double stockPriceCurrent = jobOffer.getStockPriceCurrent();
+        for (JobOffer jobOffer : jobOfferList.getJobOfferList()) {
+            String companyName = jobOffer.getCompanyName();
+            String jobPosition = jobOffer.getJobPosition();
+            String jobLocation = jobOffer.getJobLocation();
+            double annualSalary = jobOffer.getAnnualSalary();
+            double signingBonus = jobOffer.getSigningBonus();
+            int stockAmount = jobOffer.getStockAmount();
+            double stockPriceCurrent = jobOffer.getStockPriceCurrent();
 
             Object[] data = {companyName, jobPosition, jobLocation,
                     annualSalary, signingBonus, stockAmount, stockPriceCurrent};
