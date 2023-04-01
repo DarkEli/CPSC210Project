@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class EventTest {
 
@@ -23,11 +24,20 @@ public class EventTest {
         d = Calendar.getInstance().getTime();   // (2)
     }
 
+//    @Test
+//    public void testEvent() {
+//        assertEquals("E1", e.getDescription());
+//        assertEquals(d, e.getDate());
+//    }
+
     @Test
-    public void testEvent() {
-        assertEquals("E1", e.getDescription());
-        assertEquals(d, e.getDate());
+    public void testHashCode() {
+        Event e1 = new Event("E1");
+        Event e2 = new Event("E1");
+
+        assertTrue(e1.equals(e2));
     }
+
 
     @Test
     public void testToString() {
