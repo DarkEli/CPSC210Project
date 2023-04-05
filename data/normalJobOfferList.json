@@ -25,5 +25,14 @@
         "stockPriceCurrent": 0,
         "signingBonus": 0,
         "jobPosition": "SWE"
+    },
+    {
+        "stockAmount": 0,
+        "annualSalary": 100,
+        "jobLocation": "Vancouver",
+        "companyName": "UBC",
+        "stockPriceCurrent": 0,
+        "signingBonus": 0,
+        "jobPosition": "IT tech"
     }
 ]}

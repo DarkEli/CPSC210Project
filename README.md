@@ -34,10 +34,10 @@ decides to work there. The user is able to compare multiple offers through a bar
 - As a user, I want to be able to load and save the state of the application
 
 
-##Phase 4 task 2
+## Phase 4 task 2
 ![](/Applications/project_b1w6b/data/Screenshot 2023-04-01 at 2.58.50 AM.png)
 
-##Phase 3 task 3
+## Phase 3 task 3
 If I can start the project once again, I would implement override equal and hashcode to ensure that the Objects 
 (JobOffer/ City) are the same. Secondly, I would add try-catch to ensure that all the doubles and integers are in 
 positive value. Thirdly, I would write the code more neatly. Thirdly, I should create an interface class List

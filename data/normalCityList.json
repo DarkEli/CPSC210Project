@@ -28,5 +28,10 @@
         "livingExpensesAveragePerMonth": 3000,
         "cityName": "Redwood City",
         "countryName": "USA"
+    },
+    {
+        "livingExpensesAveragePerMonth": 1000,
+        "cityName": "London",
+        "countryName": "CA"
     }
 ]}
