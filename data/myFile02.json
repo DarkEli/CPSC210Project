@@ -1,0 +1,20 @@
+{"jobOfferList": [
+    {
+        "stockAmount": 100,
+        "annualSalary": 10000,
+        "jobLocation": "New York City",
+        "companyName": "Google",
+        "stockPriceCurrent": 100,
+        "signingBonus": 1000,
+        "jobPosition": "Product Manager"
+    },
+    {
+        "stockAmount": 200,
+        "annualSalary": 1000,
+        "jobLocation": "Palo Alto",
+        "companyName": "Apple",
+        "stockPriceCurrent": 121,
+        "signingBonus": 100,
+        "jobPosition": "Software Developer"
+    }
+]}

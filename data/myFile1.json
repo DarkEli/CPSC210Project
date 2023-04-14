@@ -1,0 +1,12 @@
+[
+    {
+        "livingExpensesAveragePerMonth": 1000,
+        "cityName": "New York",
+        "countryName": "USA"
+    },
+    {
+        "livingExpensesAveragePerMonth": 1001,
+        "cityName": "Vancouver",
+        "countryName": "CA"
+    }
+]

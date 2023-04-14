@@ -1,0 +1,20 @@
+{"jobOfferList": [
+    {
+        "stockAmount": 101,
+        "annualSalary": 10001,
+        "jobLocation": "Palo Alto",
+        "companyName": "Apple",
+        "stockPriceCurrent": 100,
+        "signingBonus": 2000,
+        "jobPosition": "Software Developer"
+    },
+    {
+        "stockAmount": 102,
+        "annualSalary": 10002,
+        "jobLocation": "Vancouver",
+        "companyName": "Microsoft",
+        "stockPriceCurrent": 100,
+        "signingBonus": 2001,
+        "jobPosition": "Product Manager"
+    }
+]}

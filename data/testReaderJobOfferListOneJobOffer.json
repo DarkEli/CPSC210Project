@@ -1,0 +1,9 @@
+{"jobOfferList": [{
+    "stockAmount": 100,
+    "annualSalary": 10000,
+    "jobLocation": "New York City",
+    "companyName": "Google",
+    "stockPriceCurrent": 100,
+    "signingBonus": 1000,
+    "jobPosition": "Product Manager"
+}]}
