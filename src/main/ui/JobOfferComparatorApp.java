@@ -44,6 +44,7 @@ public class JobOfferComparatorApp {
     private static final String JSON_STORE1 = "./data/normalCityList.json";
     private static final String JSON_STORE2 = "./data/normalJobOfferList.json";
 
+
     //EFFECTS: runs the teller application
     public JobOfferComparatorApp() throws FileNotFoundException {
         input = new Scanner(System.in);
